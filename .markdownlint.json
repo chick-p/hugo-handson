@@ -1,0 +1,15 @@
+{
+  "html": false,
+  "blanks-around-headers": false,
+  "no-duplicate-header": {
+    "siblings_only": true
+  },
+  "line-length": false,
+  "no-bare-urls": false,
+  "header-style": {
+    "style": "atx"
+  },
+  "fenced-code-language": false,
+  "commands-show-output": false,
+  "ul-indent": false
+}
