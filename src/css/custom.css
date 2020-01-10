@@ -1,0 +1,49 @@
+body {
+  font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+.wy-menu-vertical a, .wy-menu-vertical .subnav a {
+  color: white;
+}
+
+.wy-menu-vertical * li.current a {
+  color: black;
+}
+
+.wy-menu-vertical span {
+  color: #ff0;
+}
+
+.wy-side-nav-search {
+  background-color: teal;
+}
+
+section h2::before {
+  content: "\f0a9";
+  font-family: FontAwesome;
+  padding-right: 8px;
+}
+
+section h3::before {
+  content: "\f005";
+  font-family: FontAwesome;
+  padding-right: 8px;
+}
+
+.hljs {
+  padding: 1em;
+}
+
+pre {
+  line-height: 1.5;
+  border: none;
+  border-radius: 3px;
+}
+
+p > code,
+li > code{
+  color: #333;
+  background-color: rgba(27,31,35,.05);
+  border: none;
+  border-radius: 3px;
+}
