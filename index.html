@@ -61,6 +61,14 @@
             
     <li class="toctree-l2"><a href="#hugo">HUGO ハンズオン</a></li>
     
+        <ul>
+        
+            <li><a class="toctree-l3" href="#hugo_1">HUGO とは</a></li>
+        
+            <li><a class="toctree-l3" href="#_1">静的サイトと動的サイト</a></li>
+        
+        </ul>
+    
 
     </ul>
 	    </li>
@@ -98,6 +106,40 @@
             <div class="section">
               
                 <h1 id="hugo">HUGO ハンズオン<a class="headerlink" href="#hugo" title="Permanent link">&para;</a></h1>
+<h2 id="hugo_1">HUGO とは<a class="headerlink" href="#hugo_1" title="Permanent link">&para;</a></h2>
+<p><a href="https://gohugo.io/">HUGO</a> は、Go 言語製の静的サイトジェネレータ（Static Site Generator; SSG）です。
+Markdown 形式<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> で書かれた記事ファイルを、テーマテンプレートと呼ばれる HTML ファイルと一緒にビルドすることで、記事ページやリストページなどの HTMLファイルを生成します。</p>
+<h2 id="_1">静的サイトと動的サイト<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><strong>静的サイト</strong>は、あらかじめ作成しておいた静的ファイル（HTMLファイル）をユーザーに配信します。</p>
+<p><img alt="" src="img/ssg-static.png" /></p>
+<p><strong>動的サイト</strong>は、ユーザーからのリクエストに応じて、サーバーでコンテンツ（HTMLファイル）を生成し、ユーザーに配信します。</p>
+<p><img alt="" src="img/ssg-dynamic.png" /></p>
+<p>動的サイトと比べ静的サイトには次のメリットがあります。</p>
+<ul>
+<li>ページの表示速度が早い<ul>
+<li>静的サイトは、あらかじめ作成済みのページを表示する。</li>
+<li>動的サイトは、ユーザーのリクエストに応じてページを生成する必要がある。</li>
+</ul>
+</li>
+<li>運用コストが低い<ul>
+<li>静的サイトは、静的ファイルを置く場所（例：S3など）があれば配信できる。</li>
+<li>動的サイトは、ページを生成するプログラムを動かすサーバや DB が必要。サーバメンテナンスも必要となる。</li>
+</ul>
+</li>
+<li>セキュリティにつよい<ul>
+<li>動的サイトはプログラムの実行・DBの管理を伴うので、セキュリティ対策が必要になる。</li>
+</ul>
+</li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>HTML など Markdown 以外のフォーマットも対応しています（<a href="https://gohugo.io/content-management/formats/">Content Formats
+</a>）。&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
               
             </div>
           </div>
@@ -137,5 +179,5 @@
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2020-01-10 02:55:08
+Build Date UTC : 2020-01-16 02:00:32
 -->
