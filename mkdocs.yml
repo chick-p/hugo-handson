@@ -7,6 +7,12 @@ theme:
     - toml
 docs_dir: src
 site_dir: docs
+nav:
+  - Home: index.md
+  - 事前準備:
+    - 00_prepare/00_hugo.md
+    - 00_prepare/01_vscode.md
+    - 00_prepare/02_git.md
 markdown_extensions:
   - toc:
       permalink: True
