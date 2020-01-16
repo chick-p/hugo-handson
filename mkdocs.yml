@@ -19,6 +19,8 @@ markdown_extensions:
   - admonition
   - fontawesome_markdown
   - footnotes
+  - codehilite:
+      use_pygments: False
 extra_css:
   - "https://fonts.googleapis.com/earlyaccess/notosansjapanese.css"
   - "https://fonts.googleapis.com/css?family=Open+Sans:600,800"
