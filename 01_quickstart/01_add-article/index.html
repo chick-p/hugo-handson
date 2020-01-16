@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>コンテンツ（記事）を作成する - HUGO</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u30b3\u30f3\u30c6\u30f3\u30c4\uff08\u8a18\u4e8b\uff09\u3092\u4f5c\u6210\u3059\u308b";
+    var mkdocs_page_input_path = "01_quickstart/01_add-article.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/toml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HUGO</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">事前準備</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/00_hugo/">HUGO の開発環境の構築</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/01_vscode/">VSCode のインストールと設定</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/02_git/">Gitのインストールと設定</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">サイトと記事作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../00_add-site/">HUGO でサイトを作る</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">コンテンツ（記事）を作成する</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">コンテンツ（記事）を作成する</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">ファイルの追加</a></li>
+        
+            <li><a class="toctree-l4" href="#_5">セクションの追加</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HUGO</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>サイトと記事作成 &raquo;</li>
+        
+      
+    
+    <li>コンテンツ（記事）を作成する</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">コンテンツ（記事）を作成する<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>コンテンツとなる記事を作成する方法です。</p>
+<hr />
+<h2 id="_2">ファイルの追加<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">概要<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>コンテンツファイルは「content」ディレクトリーの下に追加します。</p>
+<h3 id="_4">手順<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>コンテンツを追加するには、<code>hugo new ファイル名.md</code> コマンドを実行します。</p>
+<pre class="codehilite"><code>$ hugo new _index.md</code></pre>
+
+
+</li>
+<li>
+<p>「content」ディレクトリーの下に <code>_index.md</code> が作成されます。</p>
+<pre class="codehilite"><code>$ hugo new _index.md
+/Users/username/Sites/example/content/docs/common.md created
+.
+├── ...
+├── content
+│   └── _index.md
+├── ...</code></pre>
+
+
+</li>
+<li>
+<p><code>_index.md</code> を開いて編集します。</p>
+<pre class="codehilite"><code>---
+title: &quot;&quot;
+date: 2019-11-15T12:56:53+09:00
+draft: true
+---
+
+-  「---」で囲われた部分を、**Front matter** と呼びます。
+-  Front matter には記事のメタ情報を記載します。
+-  記事の中身は Front matter より下に記載します。</code></pre>
+
+
+</li>
+<li>
+<p>記事タイトルを入力します。Front matter の <code>title</code> に値を設定します。</p>
+<pre class="codehilite"><code class="language-diff">---
+- title: &quot;&quot;
++ title: &quot;Hello World&quot;
+date: 2019-11-15T12:56:53+09:00
+draft: true
+---</code></pre>
+
+
+</li>
+<li>
+<p>下書きフラグ <code>draft</code> を <code>false</code> にして、ファイルがビルドされるようにします。</p>
+<pre class="codehilite"><code class="language-diff">---
+title: &quot;Hello World&quot;
+date: 2019-11-15T12:56:53+09:00
+- draft: true
++ draft: false
+---</code></pre>
+
+
+</li>
+<li>
+<p>記事の内容を Front matter 以下に記述します。</p>
+<pre class="codehilite"><code class="language-diff">---
+title: &quot;Hello World&quot;
+date: 2019-11-15T14:57:21+09:00
+draft: false
+---
+
++ # 見出し
++ これはテスト記事です。
+
++ ## レベル2の見出し
++ Markdown 記法で書きます。
+
++ ### レベル3の見出し
+
++ * 箇条書き
++   - `-` でもかけます。
+
++ 1. aaa
++ 2. bbb
++ 3. ccc
+
++ コードシンタックスは、バッククォート3つで囲みます。
+
++ ```
++ const NAME = &quot;piyo&quot;;
++ ```</code></pre>
+
+
+</li>
+<li>
+<p>ファイルの変更を上書き保存し、もう一度ブラウザで確認します（開発サーバを起動済みの場合は、以下のコマンドは不要です）。</p>
+<pre class="codehilite"><code>$ hugo server</code></pre>
+
+
+</li>
+<li>
+<p>記事の内容が反映されました。</p>
+<p><img alt="記事の反映" src="../img/techdoc-add-content.png" /></p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<h4 id="front-matter">Front matter について<a class="headerlink" href="#front-matter" title="Permanent link">&para;</a></h4>
+<p>Front matter は、YAML 形式、TOML 形式、または JSON 形式で定義できます。</p>
+<table>
+<thead>
+<tr>
+<th align="left">パラメータ</th>
+<th align="left">説明</th>
+<th align="left">備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">title</td>
+<td align="left">記事のタイトル</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">date</td>
+<td align="left">記事の日付</td>
+<td align="left">省略可能ですが、ブログなど作成日時でソートしたい場合などはつけたほうが良いです。</td>
+</tr>
+<tr>
+<td align="left">draft</td>
+<td align="left">下書きフラグ</td>
+<td align="left">- 本番に記事を反映するには値を <code>true</code> にするか、<code>draft</code> パラメータを省略します。<br>- 下書き状態でプレビューする場合は <code>hugo serve -D</code> として <code>- D</code>オプションを指定します。</td>
+</tr>
+</tbody>
+</table>
+<p>その他 HUGO 標準で指定できる値は、<a href="https://gohugo.io/content-management/front-matter/">Front matter</a> に記載されています。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>hugo new ファイル名.md</code> コマンドで追加しなくても、「content」ディレクトリ以下にファイルを作成し、Front matter を追記することでも記事を追加できます。</p>
+</div>
+<h2 id="_5">セクションの追加<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">概要<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>HUGO では、「content」ディレクトリーの下にフォルダーを追加し、階層構造を作ることができます。
+このときの階層を「セクション」と呼びます。</p>
+<pre class="codehilite"><code>content
+├── docs # Section
+│   └── record # Section
+│   │   ├── get-record.md
+│   │   ├── post-record.md
+│   │   └── _index.md
+│   ├── common.md
+│   └── _index.md
+├── tips # Section
+│   └── ...
+└──_index.md</code></pre>
+
+
+<h3 id="_7">手順<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>「techdoc」のv0.4 以降からセクションツリーを表示するには<code>menu_style</code> プロパティを <code>config.toml</code> に追記します。</p>
+<pre class="codehilite"><code class="language-diff">baseURL = &quot;http://example.org/&quot;
+languageCode = &quot;en-us&quot;
+title = &quot;サンプルサイト&quot;
+theme = &quot;techdoc&quot;
++ menu_style = &quot;open-menu&quot;</code></pre>
+
+
+</li>
+<li>
+<p>「content」ディレクトリーの下に「docs」というフォルダーを作成します。</p>
+<pre class="codehilite"><code>$ mkdir content/docs</code></pre>
+
+
+</li>
+<li>
+<p><code>hugo new ファイル名</code> コマンドで、docs のトップページと common ページのファイルを追加します。</p>
+<pre class="codehilite"><code>$ hugo new docs/_index.md
+$ hugo new docs/common.md</code></pre>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>セクションの LP（<strong>セクションページ</strong>）のファイル名は、<code>_index.md</code> にします。</li>
+<li>それ以外は好きに付けることができます。ファイル名はサイトのページ URL になります。<ul>
+<li>ファイル名が「docs/common.md」の場合、URL は「https://example.com/docs/common/」です。</li>
+</ul>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>さらにその下の階層も作ってみましょう。</p>
+<pre class="codehilite"><code>$ hugo new docs/record/_index.md
+$ hugo new docs/record/get-record.md
+$ hugo new docs/record/post-record.md</code></pre>
+
+
+</li>
+<li>
+<p>最終的に「content」以下の構成は、次のようになります。</p>
+<pre class="codehilite"><code>content
+├── docs # Section
+│   └── record # Section
+│   │   ├── get-record.md
+│   │   ├── post-record.md
+│   │   └── _index.md
+│   ├── common.md
+│   └── _index.md
+└──_index.md</code></pre>
+
+
+</li>
+<li>
+<p>「docs」セクションの下に「record」セクションが追加されました。</p>
+</li>
+<li>
+<p>作成したファイルを適当に編集します。
+ただし、<code>draft</code> の値は <code>false</code> に変更して下書きモードをオフにします。</p>
+</li>
+<li>
+<p>ブラウザ（開発サーバを起動済みの場合は、以下のコマンドは不要です）で確認します。</p>
+<p><img alt="セクション追加後のページ" src="../img/techdoc-add-more.png" /></p>
+</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../00_add-site/" class="btn btn-neutral" title="HUGO でサイトを作る"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../00_add-site/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

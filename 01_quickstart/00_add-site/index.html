@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>HUGO でサイトを作る - HUGO</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "HUGO \u3067\u30b5\u30a4\u30c8\u3092\u4f5c\u308b";
+    var mkdocs_page_input_path = "01_quickstart/00_add-site.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/toml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HUGO</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">事前準備</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/00_hugo/">HUGO の開発環境の構築</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/01_vscode/">VSCode のインストールと設定</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/02_git/">Gitのインストールと設定</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">サイトと記事作成</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">HUGO でサイトを作る</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#hugo">HUGO でサイトを作る</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">サイトの作成</a></li>
+        
+            <li><a class="toctree-l4" href="#_2">テーマの追加</a></li>
+        
+            <li><a class="toctree-l4" href="#_3">開発サーバーでの確認</a></li>
+        
+            <li><a class="toctree-l4" href="#_4">テーマの設定</a></li>
+        
+            <li><a class="toctree-l4" href="#_5">サイトの設定の変更</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../01_add-article/">コンテンツ（記事）を作成する</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HUGO</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>サイトと記事作成 &raquo;</li>
+        
+      
+    
+    <li>HUGO でサイトを作る</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="hugo">HUGO でサイトを作る<a class="headerlink" href="#hugo" title="Permanent link">&para;</a></h1>
+<p>HUGO でサイトを作成する方法です。
+この作業は、新しいサイトを作るときに行います。</p>
+<hr />
+<h2 id="_1">サイトの作成<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>作業用ディレクトリー「Sites」の下に、「example」というサイトを作成してみましょう。</p>
+<ol>
+<li>
+<p>作業用ディレクトリーに移動します。</p>
+<pre class="codehilite"><code># Windows の場合
+$ cd /Hugo/Sites
+
+# mac の場合
+$ cd ~/Sites</code></pre>
+
+
+</li>
+<li>
+<p><code>hugo new site サイト名</code> というコマンドを実行します。</p>
+<pre class="codehilite"><code>$ hugo new site example</code></pre>
+
+
+</li>
+<li>
+<p>コマンド実行に成功すると、次のような結果が表示されます。</p>
+<pre class="codehilite"><code>$ hugo new site example
+Congratulations! Your new Hugo site is created in /Users/username/Sites/example.
+
+Just a few more steps and you're ready to go:
+
+1. Download a theme into the same-named folder.
+  Choose a theme from https://themes.gohugo.io/ or
+  create your own with the &quot;hugo new theme &lt;THEMENAME&gt;&quot; command.
+2. Perhaps you want to add some content. You can add single files
+  with &quot;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&quot;.
+3. Start the built-in live server via &quot;hugo server&quot;.
+
+Visit https://gohugo.io/ for quickstart guide and full documentation.</code></pre>
+
+
+</li>
+<li>
+<p>「Sites」ディレクトリ以下に「example」が作成されていれば OK です。</p>
+</li>
+</ol>
+<h2 id="_2">テーマの追加<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>HUGO のテーマを追加します。</p>
+<p>テーマとは、Markdown ファイルをビルドして HTML ファイルを生成するためのデザインテンプレートです。
+色んな人が作ったテーマ一覧は、<a href="https://themes.gohugo.io/">themes.gohugo.io</a> で確認できます。</p>
+<p>今回は、<a href="hhttps://github.com/thingsym/hugo-theme-techdoc">techdoc theme</a> を利用してみましょう。</p>
+<p>テーマファイルはリポジトリとして公開されているので、<code>git submodule add リポジトリURL themes/テーマ名</code> コマンドで、「themes」下に追加します。</p>
+<pre class="codehilite"><code>$ cd example
+$ git init
+$ git submodule add https://github.com/thingsym/hugo-theme-techdoc.git themes/techdoc</code></pre>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>サブモジュールを使うと、外部のリポジトリを別のリポジトリに取り込みできます。サブモジュールのリポジトリが更新された場合には <code>git pull</code> コマンドで更新内容を反映できます。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Github.com から zip をダウンロードして解凍したファイルを、直接「themes」以下に置くこともできます。この場合は、サブモジュールのように元のリポジトリが更新されても更新差分の反映はできません。</p>
+</div>
+<h2 id="_3">開発サーバーでの確認<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>ローカルに開発サーバを立ち上げて、サイトを確認します。</p>
+<ol>
+<li>
+<p>開発サーバーを立ち上げて確認するには <code>hugo server -t テーマ名</code> コマンドを実行します。
+<code>-t テーマ名</code> はテーマを指定して開発サーバを立ち上げるオプションです。</p>
+<pre class="codehilite"><code>$ hugo server -t techdoc</code></pre>
+
+
+</li>
+<li>
+<p><code>http://localhost:1313/</code> に開発サーバーが立ち上がります。</p>
+<pre class="codehilite"><code>$ hugo server -t techdoc
+
+              | EN
++------------------+----+
+Pages            |  7
+Paginator pages  |  0
+Non-page files   |  0
+Static files     |  5
+Processed images |  0
+Aliases          |  0
+Sitemaps         |  1
+Cleaned          |  0
+Total in 10 ms
+
+Watching for changes in /Users/username/Sites/example/{archetypes,content,data,layouts,static,themes}
+Watching for config changes in /Users/username/Sites/example/config.toml
+Environment: &quot;development&quot;
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop</code></pre>
+
+
+</li>
+<li>
+<p>ブラウザで <code>http://localhost:1313/</code> にアクセスすると、テーマが適用されたサイトを確認できます。</p>
+<p><img alt="テーマの確認" src="../img/techdoc.png" /></p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>ディレクトリ下のファイルに変化があった場合（記事の追加・設定の変更）、自動でビルドされます。</li>
+<li>開発サーバーは <code>Ctrl + C</code>（mac の場合は <code>command + C</code>）で終了します。</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>変更が反映されないことがあります。その時は、再度ローカルサーバを立ち上げましょう。</p>
+</div>
+<h2 id="_4">テーマの設定<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>開発サーバを起動するときに毎回オプションでテーマを指定するのは大変なので、設定ファイルで、利用するテーマを設定します。</p>
+<ol>
+<li>
+<p>サイトディレクトリ直下の <code>config.toml</code> をテキストエディタで開きます。
+ファイルに設定を追加します。</p>
+<pre class="codehilite"><code class="language-toml">baseURL = &quot;http://example.org/&quot;
+languageCode = &quot;en-us&quot;
+title = &quot;My New Hugo Site&quot;
+# 以下を追記
+theme = &quot;techdoc&quot;</code></pre>
+
+
+</li>
+<li>
+<p><code>-t</code> オプションを付けずに開発サーバを起動できます。</p>
+<pre class="codehilite"><code>$ hugo server</code></pre>
+
+
+</li>
+</ol>
+<h2 id="_5">サイトの設定の変更<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p><code>config.toml</code> はサイトの設定ファイルです。
+HUGO 標準の設定や、テーマ独自の設定があるときにはこのファイルに記述します。</p>
+<p>ためしに、サイト名を変更してみましょう。</p>
+<ol>
+<li>
+<p><code>config.toml</code> の <code>title</code> パラメータの値を変更して、サイト名を変更します。</p>
+<pre class="codehilite"><code class="language-toml">baseURL = &quot;http://example.org/&quot;
+languageCode = &quot;en-us&quot;
+title = &quot;サンプルサイト&quot;
+theme = &quot;techdoc&quot;</code></pre>
+
+
+</li>
+<li>
+<p>「techdoc」はヘッダーにサイト名を表示するテーマだったので、ヘッダーが「サンプルサイト」に変更されました。</p>
+<p><img alt="サイトのタイトルを変更" src="../img/tecdoc-change-site-title.png" /></p>
+</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../01_add-article/" class="btn btn-neutral float-right" title="コンテンツ（記事）を作成する">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../00_prepare/02_git/" class="btn btn-neutral" title="Gitのインストールと設定"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../00_prepare/02_git/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../01_add-article/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

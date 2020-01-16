@@ -92,6 +92,21 @@
     </ul>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <span class="caption-text">サイトと記事作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/00_add-site/">HUGO でサイトを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/01_add-article/">コンテンツ（記事）を作成する</a>
+                </li>
+    </ul>
+	    </li>
+          
         </ul>
       </div>
       &nbsp;
@@ -136,23 +151,23 @@
 <h3 id="masos">masOS の場合<a class="headerlink" href="#masos" title="Permanent link">&para;</a></h3>
 <p>Homebrew がない場合、<a href="https://brew.sh/">Homebrew</a> をインストールします。
 次のコマンドを実行します。</p>
-<pre><code class="bash">$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-</code></pre>
+<pre class="codehilite"><code class="language-bash">$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></pre>
+
 
 <p>HUGO をインストールします。</p>
-<pre><code>$ brew install hugo
-</code></pre>
+<pre class="codehilite"><code>$ brew install hugo</code></pre>
+
 
 <p>作業用ディレクトリを作成します。</p>
-<pre><code>$ mkdir ~/Sites
-</code></pre>
+<pre class="codehilite"><code>$ mkdir ~/Sites</code></pre>
+
 
 <p>次のようなファイル構成になっていれば OK です。</p>
-<pre><code class="bash">/User/username
+<pre class="codehilite"><code class="language-bash">/User/username
 ├── ...
 ├── Sites
-├── ...
-</code></pre>
+├── ...</code></pre>
+
 
 <h3 id="windows">Windows の場合<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <ol>
@@ -163,23 +178,23 @@
 <li>環境変数に「<code>C:\Hugo\bin</code>」を追加します。</li>
 </ol>
 <p>次のようなファイル構成になっていれば OK です。</p>
-<pre><code class="bash">C:\
+<pre class="codehilite"><code class="language-bash">C:\
 ├── HUGO
 │   ├── bin # 実行ファイルディレクトリ
 │   │    └── hugo.exe
 │   └── Sites # 作業用ディレクトリ
-├── ...
-</code></pre>
+├── ...</code></pre>
+
 
 <h3 id="_1">インストールできたかの確認<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>次のコマンドを実行します。</p>
-<pre><code class="bash">$ hugo version
-</code></pre>
+<pre class="codehilite"><code class="language-bash">$ hugo version</code></pre>
+
 
 <p>次のように、バージョン番号が表示されれば OK です。</p>
-<pre><code class="bash">$ hugo version
-Hugo Static Site Generator v0.62.2/extended darwin/amd64 BuildDate: unknown
-</code></pre>
+<pre class="codehilite"><code class="language-bash">$ hugo version
+Hugo Static Site Generator v0.62.2/extended darwin/amd64 BuildDate: unknown</code></pre>
+
 
 <h2 id="_2">参考<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>

@@ -96,6 +96,21 @@
     </ul>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <span class="caption-text">サイトと記事作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/00_add-site/">HUGO でサイトを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/01_add-article/">コンテンツ（記事）を作成する</a>
+                </li>
+    </ul>
+	    </li>
+          
         </ul>
       </div>
       &nbsp;
@@ -143,15 +158,15 @@
 <h2 id="hugo">HUGO 開発におすすめの設定<a class="headerlink" href="#hugo" title="Permanent link">&para;</a></h2>
 <p>HUGO 開発におすすめの設定です。</p>
 <p>設定する場合は、「設定内容」を VSCode の[全体の設定]または [ワークスペースの設定]の<code>setting.json</code> に記載してください。</p>
-<pre><code class="json"> // インデントのガイドラインを表示します
+<pre class="codehilite"><code class="language-json"> // インデントのガイドラインを表示します
 &quot;editor.renderIndentGuides&quot;: true,
 // タブのサイズをスペース2にします。
 &quot;editor.tabSize&quot;: 2,
  // 空白を･で表示します
 &quot;editor.renderWhitespace&quot;: &quot;all&quot;,
 // 制御文字を表示します
-&quot;editor.renderControlCharacters&quot;: true,
-</code></pre>
+&quot;editor.renderControlCharacters&quot;: true,</code></pre>
+
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -165,11 +180,11 @@
 <h2 id="vscode_1">コンソールから VSCode を起動する<a class="headerlink" href="#vscode_1" title="Permanent link">&para;</a></h2>
 <p>コンソールで VSCode を起動するには <code>code パス</code> コマンドを実行します。</p>
 <p>パスに指定したディレクトリをワークスペースとして、VSCode を起動できます。左パネルにエキスプローラーが表示され、パス以下のファイルを一覧できます。</p>
-<pre><code class="bash"># ディレクトリを移動
+<pre class="codehilite"><code class="language-bash"># ディレクトリを移動
 $ cd ~/foo
 # カレントディレクトリ（~/foo）をプロジェクトルートとして VSCode を起動する
-$ code .
-</code></pre>
+$ code .</code></pre>
+
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
