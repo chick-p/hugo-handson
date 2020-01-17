@@ -9,6 +9,7 @@ HUGO でサイトを作成する方法です。
 
 1. 作業用ディレクトリーに移動します。
 
+        :::bash
         # Windows の場合
         $ cd /Hugo/Sites
 
@@ -17,11 +18,14 @@ HUGO でサイトを作成する方法です。
 
 2. `hugo new site サイト名` というコマンドを実行します。
 
+        :::bash
         $ hugo new site example
 
 3. コマンド実行に成功すると、次のような結果が表示されます。
 
+        :::bash
         $ hugo new site example
+
         Congratulations! Your new Hugo site is created in /Users/username/Sites/example.
 
         Just a few more steps and you're ready to go:
@@ -46,8 +50,9 @@ HUGO のテーマを追加します。
 
 今回は、[techdoc theme](hhttps://github.com/thingsym/hugo-theme-techdoc) を利用してみましょう。
 
-テーマファイルはリポジトリとして公開されているので、`git submodule add リポジトリURL themes/テーマ名` コマンドで、「themes」下に追加します。
+テーマファイルはリポジトリとして公開されています。`git submodule add リポジトリURL themes/テーマ名` コマンドで、「themes」下に追加します。
 
+    :::bash
     $ cd example
     $ git init
     $ git submodule add https://github.com/thingsym/hugo-theme-techdoc.git themes/techdoc
@@ -65,10 +70,12 @@ HUGO のテーマを追加します。
 1. 開発サーバーを立ち上げて確認するには `hugo server -t テーマ名` コマンドを実行します。
 `-t テーマ名` はテーマを指定して開発サーバを立ち上げるオプションです。
 
+        :::bash
         $ hugo server -t techdoc
 
 1. `http://localhost:1313/` に開発サーバーが立ち上がります。
 
+        :::bash
         $ hugo server -t techdoc
 
                       | EN
@@ -109,7 +116,7 @@ HUGO のテーマを追加します。
 1. サイトディレクトリ直下の `config.toml` をテキストエディタで開きます。
 ファイルに設定を追加します。
 
-        :::toml
+        :::toml hl_lines="5"
         baseURL = "http://example.org/"
         languageCode = "en-us"
         title = "My New Hugo Site"
@@ -118,6 +125,7 @@ HUGO のテーマを追加します。
 
 1. `-t` オプションを付けずに開発サーバを起動できます。
 
+        :::bash
         $ hugo server
 
 ## サイトの設定の変更
@@ -128,7 +136,7 @@ HUGO 標準の設定や、テーマ独自の設定があるときにはこのフ
 
 1. `config.toml` の `title` パラメータの値を変更して、サイト名を変更します。
 
-        :::toml
+        :::toml hl_lines="3"
         baseURL = "http://example.org/"
         languageCode = "en-us"
         title = "サンプルサイト"

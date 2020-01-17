@@ -7,67 +7,64 @@
 HUGO をインストールします。
 
 ### masOS の場合
-Homebrew がない場合、[Homebrew](https://brew.sh/) をインストールします。
-次のコマンドを実行します。
 
-```bash
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+1. Homebrew がない場合、[Homebrew](https://brew.sh/) をインストールします。
 
-HUGO をインストールします。
+        :::bash
+        $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-```
-$ brew install hugo
-```
+1. HUGO をインストールします。
 
-作業用ディレクトリを作成します。
+        :::bash
+        $ brew install hugo
 
-```
-$ mkdir ~/Sites
-```
+1. 作業用ディレクトリを作成します。
 
-次のようなファイル構成になっていれば OK です。
+        :::bash
+        $ mkdir ~/Sites
 
-```bash
-/User/username
-├── ...
-├── Sites
-├── ...
-```
+1. 次のようなファイル構成になっていれば OK です。
+
+        :::bash
+        /User/username
+        ├── ...
+        ├── Sites
+        ├── ...
 
 ### Windows の場合
 
 1. Cドライブ直下に「Hugo」ディレクトリを作成します。
+
 2. 「Hugo」ディレクトリの下に「bin」「Sites」ディレクトリを作成します。
+
 3. [HUGO Releases](https://github.com/gohugoio/hugo/releases) の「hugo_xxx_Windows-64bit.zip」をダウンロードします。xxx はバージョンです。
+
 4. ダウンロードした zip ファイルを解凍します。「hugo.exe」を 2. で作成した「bin」の下にコピーします。
+
 5. 環境変数に「`C:\Hugo\bin`」を追加します。
 
-次のようなファイル構成になっていれば OK です。
+6. 次のようなファイル構成になっていれば OK です。
 
-```bash
-C:\
-├── HUGO
-│   ├── bin # 実行ファイルディレクトリ
-│   │    └── hugo.exe
-│   └── Sites # 作業用ディレクトリ
-├── ...
-```
+        :::bash
+        C:\
+        ├── HUGO
+        │   ├── bin # 実行ファイルディレクトリ
+        │   │    └── hugo.exe
+        │   └── Sites # 作業用ディレクトリ
+        ├── ...
 
 ### インストールできたかの確認
 
-次のコマンドを実行します。
+1. 次のコマンドを実行します。
 
-```bash
-$ hugo version
-```
+        :::bash
+        $ hugo version
 
-次のように、バージョン番号が表示されれば OK です。
+1. 次のように、バージョン番号が表示されれば OK です。
 
-```bash
-$ hugo version
-Hugo Static Site Generator v0.62.2/extended darwin/amd64 BuildDate: unknown
-```
+        :::bash
+        $ hugo version
+        Hugo Static Site Generator v0.62.2/extended darwin/amd64 BuildDate: unknown
 
 ## 参考
 

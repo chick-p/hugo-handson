@@ -14,14 +14,12 @@ Windows の場合は、[git for windows](https://gitforwindows.org/)からイン
 
 ### PC 全体で共通のユーザー情報を設定する場合
 
-```bash
-$ git config --global user.name "ユーザー名"
-$ git config --global user.email "username@example.com"
-```
+    :::bash
+    $ git config --global user.name "ユーザー名"
+    $ git config --global user.email "username@example.com"
 
 ### 特定のリポジトリだけユーザー情報を設定したい場合
 
-```bash
-$ git config --local user.name "ユーザー名"
-$ git config --local user.email "username@example.com"
-```
+    :::bash
+    $ git config --local user.name "ユーザー名"
+    $ git config --local user.email "username@example.com"

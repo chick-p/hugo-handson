@@ -14,16 +14,15 @@ HUGO 開発におすすめの設定です。
 
 設定する場合は、「設定内容」を VSCode の[全体の設定]または [ワークスペースの設定]の`setting.json` に記載してください。
 
-```json
- // インデントのガイドラインを表示します
-"editor.renderIndentGuides": true,
-// タブのサイズをスペース2にします。
-"editor.tabSize": 2,
- // 空白を･で表示します
-"editor.renderWhitespace": "all",
-// 制御文字を表示します
-"editor.renderControlCharacters": true,
-```
+    :::js
+    // インデントのガイドラインを表示します
+    "editor.renderIndentGuides": true,
+    // タブのサイズをスペース2にします。
+    "editor.tabSize": 2,
+    // 空白を･で表示します
+    "editor.renderWhitespace": "all",
+    // 制御文字を表示します
+    "editor.renderControlCharacters": true,
 
 !!! Note
     全体の設定をする場合、次の手順で設定します。
@@ -36,14 +35,15 @@ HUGO 開発におすすめの設定です。
 
 コンソールで VSCode を起動するには `code パス` コマンドを実行します。
 
-パスに指定したディレクトリをワークスペースとして、VSCode を起動できます。左パネルにエキスプローラーが表示され、パス以下のファイルを一覧できます。
+`code パス`コマンドを実行すると、パスに指定したディレクトリをワークスペースとして、VSCode を起動します。
 
-```bash
-# ディレクトリを移動
-$ cd ~/foo
-# カレントディレクトリ（~/foo）をプロジェクトルートとして VSCode を起動する
-$ code .
-```
+左パネルにエキスプローラーが表示され、パス以下のファイルを一覧できます。
+
+    :::bash
+    # ディレクトリを移動
+    $ cd ~/foo
+    # カレントディレクトリ（~/foo）をプロジェクトルートとして VSCode を起動する
+    $ code .
 
 !!! Note
     mac の場合、`code` コマンドを実行するには設定が必要です
