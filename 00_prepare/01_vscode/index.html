@@ -158,15 +158,23 @@
 <h2 id="hugo">HUGO 開発におすすめの設定<a class="headerlink" href="#hugo" title="Permanent link">&para;</a></h2>
 <p>HUGO 開発におすすめの設定です。</p>
 <p>設定する場合は、「設定内容」を VSCode の[全体の設定]または [ワークスペースの設定]の<code>setting.json</code> に記載してください。</p>
-<pre class="codehilite"><code class="language-json"> // インデントのガイドラインを表示します
-&quot;editor.renderIndentGuides&quot;: true,
-// タブのサイズをスペース2にします。
-&quot;editor.tabSize&quot;: 2,
- // 空白を･で表示します
-&quot;editor.renderWhitespace&quot;: &quot;all&quot;,
-// 制御文字を表示します
-&quot;editor.renderControlCharacters&quot;: true,</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">// インデントのガイドラインを表示します</span>
+<span class="s2">&quot;editor.renderIndentGuides&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="c1">// タブのサイズをスペース2にします。</span>
+<span class="s2">&quot;editor.tabSize&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+<span class="c1">// 空白を･で表示します</span>
+<span class="s2">&quot;editor.renderWhitespace&quot;</span><span class="o">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+<span class="c1">// 制御文字を表示します</span>
+<span class="s2">&quot;editor.renderControlCharacters&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</pre></div>
+</td></tr></table>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -179,12 +187,17 @@
 </div>
 <h2 id="vscode_1">コンソールから VSCode を起動する<a class="headerlink" href="#vscode_1" title="Permanent link">&para;</a></h2>
 <p>コンソールで VSCode を起動するには <code>code パス</code> コマンドを実行します。</p>
-<p>パスに指定したディレクトリをワークスペースとして、VSCode を起動できます。左パネルにエキスプローラーが表示され、パス以下のファイルを一覧できます。</p>
-<pre class="codehilite"><code class="language-bash"># ディレクトリを移動
-$ cd ~/foo
-# カレントディレクトリ（~/foo）をプロジェクトルートとして VSCode を起動する
-$ code .</code></pre>
-
+<p><code>code パス</code>コマンドを実行すると、パスに指定したディレクトリをワークスペースとして、VSCode を起動します。</p>
+<p>左パネルにエキスプローラーが表示され、パス以下のファイルを一覧できます。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># ディレクトリを移動</span>
+$ <span class="nb">cd</span> ~/foo
+<span class="c1"># カレントディレクトリ（~/foo）をプロジェクトルートとして VSCode を起動する</span>
+$ code .
+</pre></div>
+</td></tr></table>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>

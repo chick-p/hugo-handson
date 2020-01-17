@@ -35,9 +35,29 @@ section h3::before {
 }
 
 pre {
-  line-height: 1.5;
   border: none;
   border-radius: 3px;
+}
+
+.rst-content table.docutils td {
+  padding: 0;
+}
+
+.linenodiv pre {
+  font-size: 1rem;
+}
+
+.rst-content table.docutils td.code{
+  width: 100%;
+}
+
+.codehilite {
+  padding: 3px 12px;
+  line-height: 1.7;
+}
+
+.codehilite pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
 }
 
 p > code,

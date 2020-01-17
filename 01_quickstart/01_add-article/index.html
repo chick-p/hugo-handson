@@ -153,93 +153,145 @@
 <ol>
 <li>
 <p>コンテンツを追加するには、<code>hugo new ファイル名.md</code> コマンドを実行します。</p>
-<pre class="codehilite"><code>$ hugo new _index.md</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ hugo new _index.md
+</pre></div>
+</td></tr></table>
 
 </li>
 <li>
 <p>「content」ディレクトリーの下に <code>_index.md</code> が作成されます。</p>
-<pre class="codehilite"><code>$ hugo new _index.md
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ hugo new _index.md
 /Users/username/Sites/example/content/docs/common.md created
 .
 ├── ...
 ├── content
 │   └── _index.md
-├── ...</code></pre>
-
+├── ...
+</pre></div>
+</td></tr></table>
 
 </li>
 <li>
 <p><code>_index.md</code> を開いて編集します。</p>
-<pre class="codehilite"><code>---
-title: &quot;&quot;
-date: 2019-11-15T12:56:53+09:00
-draft: true
----
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nn">---</span>
+<span class="nt">title</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+<span class="nt">date</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2019-11-15T12:56:53+09:00</span>
+<span class="nt">draft</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span>
 
--  「---」で囲われた部分を、**Front matter** と呼びます。
--  Front matter には記事のメタ情報を記載します。
--  記事の中身は Front matter より下に記載します。</code></pre>
-
+<span class="p p-Indicator">-</span>  <span class="l l-Scalar l-Scalar-Plain">「---」で囲われた部分を、**Front matter** と呼びます。</span>
+<span class="p p-Indicator">-</span>  <span class="l l-Scalar l-Scalar-Plain">Front matter には記事のメタ情報を記載します。</span>
+<span class="p p-Indicator">-</span>  <span class="l l-Scalar l-Scalar-Plain">記事の中身は Front matter より下に記載します。</span>
+</pre></div>
+</td></tr></table>
 
 </li>
 <li>
 <p>記事タイトルを入力します。Front matter の <code>title</code> に値を設定します。</p>
-<pre class="codehilite"><code class="language-diff">---
-- title: &quot;&quot;
-+ title: &quot;Hello World&quot;
-date: 2019-11-15T12:56:53+09:00
-draft: true
----</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nn">---</span>
+<span class="hll"><span class="nt">title</span><span class="p">:</span> <span class="s">&quot;Hello</span><span class="nv"> </span><span class="s">World&quot;</span>
+</span><span class="nt">date</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2019-11-15T12:56:53+09:00</span>
+<span class="nt">draft</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span>
+</pre></div>
+</td></tr></table>
 
 </li>
 <li>
 <p>下書きフラグ <code>draft</code> を <code>false</code> にして、ファイルがビルドされるようにします。</p>
-<pre class="codehilite"><code class="language-diff">---
-title: &quot;Hello World&quot;
-date: 2019-11-15T12:56:53+09:00
-- draft: true
-+ draft: false
----</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nn">---</span>
+<span class="nt">title</span><span class="p">:</span> <span class="s">&quot;Hello</span><span class="nv"> </span><span class="s">World&quot;</span>
+<span class="nt">date</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2019-11-15T12:56:53+09:00</span>
+<span class="hll"><span class="nt">draft</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span class="nn">---</span>
+</pre></div>
+</td></tr></table>
 
 </li>
 <li>
 <p>記事の内容を Front matter 以下に記述します。</p>
-<pre class="codehilite"><code class="language-diff">---
-title: &quot;Hello World&quot;
-date: 2019-11-15T14:57:21+09:00
-draft: false
----
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nn">---</span>
+<span class="nt">title</span><span class="p">:</span> <span class="s">&quot;Hello</span><span class="nv"> </span><span class="s">World&quot;</span>
+<span class="nt">date</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2019-11-15T14:57:21+09:00</span>
+<span class="nt">draft</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nn">---</span>
 
-+ # 見出し
-+ これはテスト記事です。
-
-+ ## レベル2の見出し
-+ Markdown 記法で書きます。
-
-+ ### レベル3の見出し
-
-+ * 箇条書き
-+   - `-` でもかけます。
-
-+ 1. aaa
-+ 2. bbb
-+ 3. ccc
-
-+ コードシンタックスは、バッククォート3つで囲みます。
-
-+ ```
-+ const NAME = &quot;piyo&quot;;
-+ ```</code></pre>
-
+<span class="hll"><span class="l l-Scalar l-Scalar-Plain">+</span> <span class="c1"># 見出し</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ これはテスト記事です。</span>
+</span><span class="hll">
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+</span> <span class="c1">## レベル2の見出し</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ Markdown 記法で書きます。</span>
+</span><span class="hll">
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+</span> <span class="c1">### レベル3の見出し</span>
+</span><span class="hll">
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ * 箇条書き</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+   - `-` でもかけます。</span>
+</span><span class="hll">
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ 1. aaa</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ 2. bbb</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ 3. ccc</span>
+</span><span class="hll">
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ コードシンタックスは、バッククォート3つで囲みます。</span>
+</span><span class="hll">
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ ```</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ const NAME = &quot;piyo&quot;;</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ ```</span>
+</span></pre></div>
+</td></tr></table>
 
 </li>
 <li>
 <p>ファイルの変更を上書き保存し、もう一度ブラウザで確認します（開発サーバを起動済みの場合は、以下のコマンドは不要です）。</p>
-<pre class="codehilite"><code>$ hugo server</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ hugo server
+</pre></div>
+</td></tr></table>
 
 </li>
 <li>
@@ -287,42 +339,61 @@ draft: false
 <h3 id="_6">概要<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>HUGO では、「content」ディレクトリーの下にフォルダーを追加し、階層構造を作ることができます。
 このときの階層を「セクション」と呼びます。</p>
-<pre class="codehilite"><code>content
-├── docs # Section
-│   └── record # Section
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>content
+├── docs <span class="c1"># Section</span>
+│   └── record <span class="c1"># Section</span>
 │   │   ├── get-record.md
 │   │   ├── post-record.md
 │   │   └── _index.md
 │   ├── common.md
 │   └── _index.md
-├── tips # Section
+├── tips <span class="c1"># Section</span>
 │   └── ...
-└──_index.md</code></pre>
-
+└──_index.md
+</pre></div>
+</td></tr></table>
 
 <h3 id="_7">手順<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>「techdoc」のv0.4 以降からセクションツリーを表示するには<code>menu_style</code> プロパティを <code>config.toml</code> に追記します。</p>
-<pre class="codehilite"><code class="language-diff">baseURL = &quot;http://example.org/&quot;
-languageCode = &quot;en-us&quot;
-title = &quot;サンプルサイト&quot;
-theme = &quot;techdoc&quot;
-+ menu_style = &quot;open-menu&quot;</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">baseURL</span> <span class="o">=</span> <span class="s">&quot;http://example.org/&quot;</span>
+<span class="n">languageCode</span> <span class="o">=</span> <span class="s">&quot;en-us&quot;</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s">&quot;サンプルサイト&quot;</span>
+<span class="n">theme</span> <span class="o">=</span> <span class="s">&quot;techdoc&quot;</span>
+<span class="hll"><span class="n">menu_style</span> <span class="o">=</span> <span class="s">&quot;open-menu&quot;</span>
+</span></pre></div>
+</td></tr></table>
 
 </li>
 <li>
 <p>「content」ディレクトリーの下に「docs」というフォルダーを作成します。</p>
-<pre class="codehilite"><code>$ mkdir content/docs</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mkdir content/docs
+</pre></div>
+</td></tr></table>
 
 </li>
 <li>
 <p><code>hugo new ファイル名</code> コマンドで、docs のトップページと common ページのファイルを追加します。</p>
-<pre class="codehilite"><code>$ hugo new docs/_index.md
-$ hugo new docs/common.md</code></pre>
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ hugo new docs/_index.md
+$ hugo new docs/common.md
+</pre></div>
+</td></tr></table>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -337,24 +408,36 @@ $ hugo new docs/common.md</code></pre>
 </li>
 <li>
 <p>さらにその下の階層も作ってみましょう。</p>
-<pre class="codehilite"><code>$ hugo new docs/record/_index.md
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ hugo new docs/record/_index.md
 $ hugo new docs/record/get-record.md
-$ hugo new docs/record/post-record.md</code></pre>
-
+$ hugo new docs/record/post-record.md
+</pre></div>
+</td></tr></table>
 
 </li>
 <li>
 <p>最終的に「content」以下の構成は、次のようになります。</p>
-<pre class="codehilite"><code>content
-├── docs # Section
-│   └── record # Section
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>content
+├── docs <span class="c1"># Section</span>
+│   └── record <span class="c1"># Section</span>
 │   │   ├── get-record.md
 │   │   ├── post-record.md
 │   │   └── _index.md
 │   ├── common.md
 │   └── _index.md
-└──_index.md</code></pre>
-
+└──_index.md
+</pre></div>
+</td></tr></table>
 
 </li>
 <li>

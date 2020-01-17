@@ -149,53 +149,96 @@
 <h2 id="hugo_1">HUGO のインストール<a class="headerlink" href="#hugo_1" title="Permanent link">&para;</a></h2>
 <p>HUGO をインストールします。</p>
 <h3 id="masos">masOS の場合<a class="headerlink" href="#masos" title="Permanent link">&para;</a></h3>
-<p>Homebrew がない場合、<a href="https://brew.sh/">Homebrew</a> をインストールします。
-次のコマンドを実行します。</p>
-<pre class="codehilite"><code class="language-bash">$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></pre>
+<ol>
+<li>
+<p>Homebrew がない場合、<a href="https://brew.sh/">Homebrew</a> をインストールします。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ /usr/bin/ruby -e <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</td></tr></table>
 
-
+</li>
+<li>
 <p>HUGO をインストールします。</p>
-<pre class="codehilite"><code>$ brew install hugo</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ brew install hugo
+</pre></div>
+</td></tr></table>
 
-
+</li>
+<li>
 <p>作業用ディレクトリを作成します。</p>
-<pre class="codehilite"><code>$ mkdir ~/Sites</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mkdir ~/Sites
+</pre></div>
+</td></tr></table>
 
-
+</li>
+<li>
 <p>次のようなファイル構成になっていれば OK です。</p>
-<pre class="codehilite"><code class="language-bash">/User/username
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/User/username
 ├── ...
 ├── Sites
-├── ...</code></pre>
+├── ...
+</pre></div>
+</td></tr></table>
 
-
+</li>
+</ol>
 <h3 id="windows">Windows の場合<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Cドライブ直下に「Hugo」ディレクトリを作成します。</li>
-<li>「Hugo」ディレクトリの下に「bin」「Sites」ディレクトリを作成します。</li>
-<li><a href="https://github.com/gohugoio/hugo/releases">HUGO Releases</a> の「hugo_xxx_Windows-64bit.zip」をダウンロードします。xxx はバージョンです。</li>
-<li>ダウンロードした zip ファイルを解凍します。「hugo.exe」を 2. で作成した「bin」の下にコピーします。</li>
-<li>環境変数に「<code>C:\Hugo\bin</code>」を追加します。</li>
-</ol>
+<li>
+<p>Cドライブ直下に「Hugo」ディレクトリを作成します。</p>
+</li>
+<li>
+<p>「Hugo」ディレクトリの下に「bin」「Sites」ディレクトリを作成します。</p>
+</li>
+<li>
+<p><a href="https://github.com/gohugoio/hugo/releases">HUGO Releases</a> の「hugo_xxx_Windows-64bit.zip」をダウンロードします。xxx はバージョンです。</p>
+</li>
+<li>
+<p>ダウンロードした zip ファイルを解凍します。「hugo.exe」を 2. で作成した「bin」の下にコピーします。</p>
+</li>
+<li>
+<p>環境変数に「<code>C:\Hugo\bin</code>」を追加します。</p>
+</li>
+<li>
 <p>次のようなファイル構成になっていれば OK です。</p>
-<pre class="codehilite"><code class="language-bash">C:\
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>C:<span class="se">\</span>
 ├── HUGO
-│   ├── bin # 実行ファイルディレクトリ
+│   ├── bin <span class="c1"># 実行ファイルディレクトリ</span>
 │   │    └── hugo.exe
-│   └── Sites # 作業用ディレクトリ
-├── ...</code></pre>
+│   └── Sites <span class="c1"># 作業用ディレクトリ</span>
+├── ...
+</pre></div>
+</td></tr></table>
 
-
+</li>
+</ol>
 <h3 id="_1">インストールできたかの確認<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
 <p>次のコマンドを実行します。</p>
-<pre class="codehilite"><code class="language-bash">$ hugo version</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ hugo version
+</pre></div>
+</td></tr></table>
 
-
+</li>
+<li>
 <p>次のように、バージョン番号が表示されれば OK です。</p>
-<pre class="codehilite"><code class="language-bash">$ hugo version
-Hugo Static Site Generator v0.62.2/extended darwin/amd64 BuildDate: unknown</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ hugo version
+Hugo Static Site Generator v0.62.2/extended darwin/amd64 BuildDate: unknown
+</pre></div>
+</td></tr></table>
 
-
+</li>
+</ol>
 <h2 id="_2">参考<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://gohugo.io/getting-started/installing/#homebrew-macos">Hugo Install - mac</a></li>
