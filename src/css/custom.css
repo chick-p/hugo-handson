@@ -52,7 +52,11 @@ pre {
 }
 
 .codehilite {
-  padding: 6px 12px;
+  padding: 3px 12px;
+}
+
+.codehilite pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
 }
 
 p > code,
