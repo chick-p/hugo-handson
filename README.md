@@ -13,6 +13,7 @@ Install some libraries
 # required python libraries for mkdocs
 $ pip install mkdocs
 $ pip install fontawesome_markdown
+$ pip install pygments
 
 # lint
 $ npm install

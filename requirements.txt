@@ -1,2 +1,3 @@
 mkdocs==1.0.4
 fontawesome_markdown
+pygments
