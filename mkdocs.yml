@@ -16,6 +16,13 @@ nav:
   - サイトと記事作成:
     - 01_quickstart/00_add-site.md
     - 01_quickstart/01_add-article.md
+  - テーマの作成:
+    - 02_theme/01_create-site.md
+    - 02_theme/02_create-quick-theme.md
+    - 02_theme/03.hugo-syntax.md
+    - 02_theme/04_kind-template.md
+    - 02_theme/05_theme-directory.md
+    - 02_theme/06_partial.md
 markdown_extensions:
   - toc:
       permalink: True
