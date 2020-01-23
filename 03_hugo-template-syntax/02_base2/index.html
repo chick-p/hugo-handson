@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>テンプレートのシンタックス その2 - HUGO</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u306e\u30b7\u30f3\u30bf\u30c3\u30af\u30b9 \u305d\u306e2";
+    var mkdocs_page_input_path = "03_hugo-template-syntax/02_base2.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/toml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HUGO</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">事前準備</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/00_hugo/">HUGO の開発環境の構築</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/01_vscode/">VSCode のインストールと設定</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/02_git/">Gitのインストールと設定</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">サイトと記事作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/00_add-site/">HUGO でサイトを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/01_add-article/">コンテンツ（記事）を作成する</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">テーマの作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../02_theme/01_create-site/">サンプルサイトとその構成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/02_create-quick-theme/">テーマテンプレートを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/04_kind-template/">ページの種類を学ぶ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/05_theme-directory/">テーマテンプレートの構成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/06_partial/">テンプレートを部品化する</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">HUGO テンプレートシンタックス</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../01_base/">テンプレートのシンタックス その1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../02_custom-variable.md">None</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HUGO</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>テンプレートのシンタックス その2</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="2">テンプレートのシンタックス その2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="_1">変数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>ページの種類によって、<code>.</code> から呼び出せる変数は異なります。</p>
+<p>これらは <a href="https://gohugo.io/templates/">Templates</a> で確認できます。</p>
+<ul>
+<li>トップページのテンプレートで使える変数：<a href="https://gohugo.io/templates/homepage/">Homepage Templates</a><ul>
+<li><a href="https://gohugo.io/variables/page/">page variables</a></li>
+<li><a href="https://gohugo.io/variables/site/">site variables</a></li>
+</ul>
+</li>
+<li>記事のテンプレートで使える変数：<a href="https://gohugo.io/templates/single-page-templates/">Single Page Templates</a><ul>
+<li><a href="https://gohugo.io/variables/page/">page variables</a></li>
+<li><a href="https://gohugo.io/variables/site/">site variables</a></li>
+</ul>
+</li>
+<li>一覧のテンプレートで使える変数：<a href="https://gohugo.io/templates/lists/">List of Content in Hugo</a><ul>
+<li><a href="https://gohugo.io/variables/page/">page variables</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="_2">カスタム変数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>HUGO にはユーザー独自のカスタム変数を作ることもできます。</p>
+<p>カスタム変数は <code>$変数名 := 値</code> のように定義します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{{ $address := &quot;東京都&quot; }} <span class="c">&lt;!-- 定義 --&gt;</span>
+{{ $address }}<span class="c">&lt;!-- 呼び出し --&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<p>値の再代入は <code>$変数名 = 値</code> で行います。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{{ $pageType := &quot;通常のページ&quot; }}
+{{ if .IsHome }}
+    {{ $pageType = &quot;ホームページ&quot; }}
+{{ end }}
+ここは{{ $pageType }}です。
+</pre></div>
+</td></tr></table>
+
+<h2 id="_3">空白のトリム<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><code>{{ }}</code> 内の前後に <code>-</code>（ハイフン）をつけると、ハイフン前後の空白をトリムします。
+テンプレートでは可読性のために改行や入れ子にしたいけど、出力したHTMLでは改行や空白なしに出力したいなどの場合に便利です。</p>
+<h3 id="1">例1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h4 id="_4">テンプレート<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
+{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}
+<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="_5">出力結果<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
+記事のタイトル | サイトタイトル
+<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="2_1">例2<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<h4 id="_6">テンプレート<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
+{{- if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}
+<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="_7">出力結果<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>記事のタイトル | サイトタイトル
+<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="3">例3<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<h4 id="_8">テンプレート<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
+{{- if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title -}}
+<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="_9">出力結果<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>記事のタイトル | サイトタイトル<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="_10">関数<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>HUGO には数値計算や文字列処理を行う関数があります。</p>
+<p>基本的なフォーマットは、<code>{{ 関数名 引数 引数 …}}</code> です。</p>
+<h4 id="_11">テンプレート<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{{ add 1 2 }}
+{{ lt 1 2 }} <span class="c">&lt;!-- Less Than (&lt;) --&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="_12">出力結果<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>3
+true
+</pre></div>
+</td></tr></table>
+
+<p>利用できる関数は <a href="https://gohugo.io/functions/">Functions Quick Reference</a> で確認できます。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

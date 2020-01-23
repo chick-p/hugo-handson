@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>テンプレートのシンタックスを学ぶ - HUGO</title>
+  <title>テンプレートのシンタックス その1 - HUGO</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -21,7 +21,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u306e\u30b7\u30f3\u30bf\u30c3\u30af\u30b9\u3092\u5b66\u3076";
+    var mkdocs_page_name = "\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u306e\u30b7\u30f3\u30bf\u30c3\u30af\u30b9 \u305d\u306e1";
     var mkdocs_page_input_path = "03_hugo-template-syntax/01_base.md";
     var mkdocs_page_url = null;
   </script>
@@ -126,25 +126,29 @@
     <ul class="subnav">
                 <li class=" current">
                     
-    <a class="current" href="./">テンプレートのシンタックスを学ぶ</a>
+    <a class="current" href="./">テンプレートのシンタックス その1</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#_1">テンプレートのシンタックスを学ぶ</a></li>
+    <li class="toctree-l3"><a href="#1">テンプレートのシンタックス その1</a></li>
     
         <ul>
         
-            <li><a class="toctree-l4" href="#_2">概要</a></li>
+            <li><a class="toctree-l4" href="#_1">概要</a></li>
         
-            <li><a class="toctree-l4" href="#_3">{{ }}</a></li>
+            <li><a class="toctree-l4" href="#_2">{{ }}</a></li>
         
-            <li><a class="toctree-l4" href="#_8">ドット（.）が指すオブジェクト</a></li>
+            <li><a class="toctree-l4" href="#_7">ドット（.）が指すオブジェクト</a></li>
         
-            <li><a class="toctree-l4" href="#_9">変数</a></li>
+            <li><a class="toctree-l4" href="#_8">変数</a></li>
         
         </ul>
     
 
     </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../02_custom-variable.md">None</a>
                 </li>
     </ul>
 	    </li>
@@ -175,7 +179,7 @@
         
       
     
-    <li>テンプレートのシンタックスを学ぶ</li>
+    <li>テンプレートのシンタックス その1</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -185,24 +189,24 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">テンプレートのシンタックスを学ぶ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+                <h1 id="1">テンプレートのシンタックス その1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
 <p>HUGO のテンプレート構文についての概要を説明します。</p>
 <hr />
-<h2 id="_2">概要<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_1">概要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>HUGO のテンプレートで HTML を生成する機能は、GO 言語のテンプレートエンジンを利用しています。
 そのため、テンプレートファイルは HTML とテンプレート記法を組み合わせて記述します。</p>
-<h2 id="_3">{{ }}<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_2">{{ }}<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>テンプレートファイル内で、HUGO の変数や関数は <code>{{ .変数名 }}</code> や <code>{{ .関数名 引数1 引数2 }}</code> のように記述します。
 HUGO では、<code>{{ }}</code>（mustache 記法）で囲まれた中身をテンプレートエンジンでの処理結果を置き換えて HTML に出力します。</p>
 <p><code>{{ }}</code> 内の前のスペースは無くても動きます。ただ、可読性を高めるためにつけたほうが良いとおもっています。</p>
 <p>以下は、テンプレートの記述と結果の例です。</p>
-<h3 id="1">例1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<h4 id="_4">テンプレート<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<h3 id="1_1">例1<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<h4 id="_3">テンプレート<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ .Site.Title }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table>
 
-<h4 id="_5">出力結果<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<h4 id="_4">出力結果<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>My New Hugo Site<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table>
@@ -210,7 +214,7 @@ HUGO では、<code>{{ }}</code>（mustache 記法）で囲まれた中身をテ
 <p><code>.Site</code> はサイト設定を表すオブジェクトです（参照: <a href="https://gohugo.io/variables/site/">Site Variables</a>）。
 サイト設定のオブジェクトの変数 <code>Title</code> を出力します。</p>
 <h3 id="2">例2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<h4 id="_6">テンプレート<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<h4 id="_5">テンプレート<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -225,7 +229,7 @@ HUGO では、<code>{{ }}</code>（mustache 記法）で囲まれた中身をテ
 </pre></div>
 </td></tr></table>
 
-<h4 id="_7">出力結果<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<h4 id="_6">出力結果<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -238,7 +242,7 @@ HUGO では、<code>{{ }}</code>（mustache 記法）で囲まれた中身をテ
 
 <p><code>{{ range コレクション名 }} ~ {{ end }}</code> はループ関数です（参考：<a href="https://gohugo.io/functions/range/">Functions - range</a>）。
 引数として与えられたコレクション名（配列）をひとつずつ取り出し、取り出した要素に対し <code>{{range}}{{end}}</code> で囲った中で処理をします。</p>
-<h2 id="_8">ドット（<code>.</code>）が指すオブジェクト<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_7">ドット（<code>.</code>）が指すオブジェクト<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>HUGO のテンプレートでは、<code>.</code> を使って変数にアクセスします。
 このドットが指すオブジェクトは、コンテキスト（＝表示する場所）によって内容が異なります。</p>
 <p>たとえば、<code>index.html</code> はサイトのトップページ（ホームページ）なので、 <code>.</code> はトップページのオブジェクトを指しています。</p>
@@ -273,7 +277,7 @@ HUGO では、<code>{{ }}</code>（mustache 記法）で囲まれた中身をテ
 </td></tr></table>
 
 <p><code>$.</code> はコンテキストに関わらず、現在のページのオブジェクトを指します。たとえばループ内でもページタイトルを呼び出したいというときに使います。</p>
-<h2 id="_9">変数<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="_8">変数<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>ページの種類によって、<code>.</code> から呼び出せる変数は異なります。</p>
 <p>これらは <a href="https://gohugo.io/templates/">Templates</a> で確認できます。</p>
 <ul>
