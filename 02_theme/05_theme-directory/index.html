@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>テーマテンプレートの構成 - HUGO</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u30c6\u30fc\u30de\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u306e\u69cb\u6210";
+    var mkdocs_page_input_path = "02_theme/05_theme-directory.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/toml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HUGO</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">事前準備</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/00_hugo/">HUGO の開発環境の構築</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/01_vscode/">VSCode のインストールと設定</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/02_git/">Gitのインストールと設定</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">サイトと記事作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/00_add-site/">HUGO でサイトを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/01_add-article/">コンテンツ（記事）を作成する</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">テーマの作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../01_create-site/">サンプルサイトとその構成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../02_create-quick-theme/">テーマテンプレートを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../03.hugo-syntax/">HUGO テンプレートのシンタックスを知る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../04_kind-template/">ページの種類を学ぶ</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">テーマテンプレートの構成</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">テーマテンプレートの構成</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">構成</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../06_partial/">テンプレートを部品化する</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HUGO</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>テーマの作成 &raquo;</li>
+        
+      
+    
+    <li>テーマテンプレートの構成</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">テーマテンプレートの構成<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>作成したテーマテンプレートの構成について説明します。</p>
+<hr />
+<h2 id="_2">構成<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>テーマのディレクトリの構成を見てみましょう。
+※がついているディレクトリやファイルは、今後触っていくディレクトリ・ファイルです。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>themes/mytheme
+├── LICENSE
+├── archetypes
+│   └── default.md
+├── layouts
+│   ├── <span class="m">404</span>.html
+│   ├── index.html
+│   ├── _default
+│   │   ├── baseof.html
+│   │   ├── list.html
+│   │   └── single.html
+│   └── partials
+│       ├── footer.html
+│       ├── head.html
+│       └── header.html
+├── static
+│   ├── css
+│   └── js
+└── theme.toml
+</pre></div>
+</td></tr></table>
+
+<h3 id="license">LICENSE<a class="headerlink" href="#license" title="Permanent link">&para;</a></h3>
+<p>テーマを配布するときのライセンスを定義します。</p>
+<h3 id="archetypes">archetypes<a class="headerlink" href="#archetypes" title="Permanent link">&para;</a></h3>
+<p>テーマ独自の記事ファイルのひな形を置くディレクトリです。</p>
+<h3 id="layouts">layouts※<a class="headerlink" href="#layouts" title="Permanent link">&para;</a></h3>
+<p>テーマのレイアウトファイルを置くディレクトリです。</p>
+<h4 id="layouts_1">layouts ディレクトリ直下<a class="headerlink" href="#layouts_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>404.html※<ul>
+<li>404 エラーページのテンプレートです。空のファイルが生成されます。</li>
+</ul>
+</li>
+<li>index.html※<ul>
+<li>サイトのトップページのテンプレートです。</li>
+</ul>
+</li>
+</ul>
+<h4 id="_default">_default 以下<a class="headerlink" href="#_default" title="Permanent link">&para;</a></h4>
+<h5 id="baseofhtml">baseof.html※<a class="headerlink" href="#baseofhtml" title="Permanent link">&para;</a></h5>
+<ul>
+<li>サイト全体のテンプレートです。</li>
+<li>このファイル内で、部品化した別のHTMLファイルで定義しているテンプレートを呼び出しています。</li>
+</ul>
+<h5 id="listhtml">list.html※<a class="headerlink" href="#listhtml" title="Permanent link">&para;</a></h5>
+<ul>
+<li>記事の一覧ページなどのテンプレートです。</li>
+<li>空のファイルが生成されます。</li>
+</ul>
+<h5 id="singlehtml">single.html※<a class="headerlink" href="#singlehtml" title="Permanent link">&para;</a></h5>
+<ul>
+<li>記事ページのテンプレートです。空ページが生成されます。</li>
+</ul>
+<h4 id="partials">partials 以下<a class="headerlink" href="#partials" title="Permanent link">&para;</a></h4>
+<h5 id="footerhtml">footer.html※<a class="headerlink" href="#footerhtml" title="Permanent link">&para;</a></h5>
+<ul>
+<li>フッター部分を記述するため部品化されたテンプレートです。</li>
+<li><code>baseof.html</code> から呼び出されています。</li>
+</ul>
+<h5 id="headhtml">head.html※<a class="headerlink" href="#headhtml" title="Permanent link">&para;</a></h5>
+<ul>
+<li><code>&lt;head&gt;</code> 要素内を記述するため部品化されたテンプレートです。</li>
+<li><code>baseof.html</code> から呼び出されています。</li>
+</ul>
+<h5 id="headerhtml">header.html※<a class="headerlink" href="#headerhtml" title="Permanent link">&para;</a></h5>
+<ul>
+<li>ヘッダー部分を記述するため部品化されたテンプレートです。</li>
+<li><code>baseof.html</code> から呼び出されています。</li>
+</ul>
+<h3 id="static">static※<a class="headerlink" href="#static" title="Permanent link">&para;</a></h3>
+<p>レイアウトファイルから参照する静的ファイル（css / js）を置くディレクトリです。</p>
+<h3 id="themetoml">theme.toml<a class="headerlink" href="#themetoml" title="Permanent link">&para;</a></h3>
+<p>テーマを配布するときのテーマ設定を定義します。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../06_partial/" class="btn btn-neutral float-right" title="テンプレートを部品化する">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../04_kind-template/" class="btn btn-neutral" title="ページの種類を学ぶ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../04_kind-template/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../06_partial/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

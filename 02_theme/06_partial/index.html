@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>テンプレートを部品化する - HUGO</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u3092\u90e8\u54c1\u5316\u3059\u308b";
+    var mkdocs_page_input_path = "02_theme/06_partial.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/toml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HUGO</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">事前準備</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/00_hugo/">HUGO の開発環境の構築</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/01_vscode/">VSCode のインストールと設定</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/02_git/">Gitのインストールと設定</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">サイトと記事作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/00_add-site/">HUGO でサイトを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/01_add-article/">コンテンツ（記事）を作成する</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">テーマの作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../01_create-site/">サンプルサイトとその構成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../02_create-quick-theme/">テーマテンプレートを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../03.hugo-syntax/">HUGO テンプレートのシンタックスを知る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../04_kind-template/">ページの種類を学ぶ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../05_theme-directory/">テーマテンプレートの構成</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">テンプレートを部品化する</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">テンプレートを部品化する</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">パーシャルテンプレート</a></li>
+        
+            <li><a class="toctree-l4" href="#_5">ベーステンプレート</a></li>
+        
+            <li><a class="toctree-l4" href="#_8">動作確認</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HUGO</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>テーマの作成 &raquo;</li>
+        
+      
+    
+    <li>テンプレートを部品化する</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">テンプレートを部品化する<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>テンプレートファイルは部品化すると管理しやすくなります。</p>
+<hr />
+<h2 id="_2">パーシャルテンプレート<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">概要<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>サイトにおいて、各ページで共通する部品があることがあります。</p>
+<ul>
+<li>ヘッダー</li>
+<li>フッター</li>
+<li>サイドバーのナビゲーション</li>
+</ul>
+<p>こういった共通する部品は、部品化しておくとテンプレートの記述をシンプルにできます。
+HUGO ではこれらの部品化したテンプレートのことを「<a href="https://gohugo.io/templates/partials/"><strong>パーシャルテンプレート</strong></a>」と呼びます。</p>
+<h3 id="_4">部品化してみる<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>たとえば次のような トップページの HTML を作りたいとします。
+このヘッダー部分とフッター部分を部品化してみましょう</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;{{ .Site.LanguageCode }}&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span> <span class="c">&lt;!-- ここはヘッダー --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/css/main.css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">main</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
+      トップページだよ
+    <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>copyright © {{ .Site.Copyright }}<span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span> <span class="c">&lt;!-- ここはフッター --&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<p>パーシャルテンプレートのファイルは「layouts/partials」以下に配置します。ファイル名は任意でつけることができます。</p>
+<ul>
+<li>
+<p><code>mytheme/layouts/partials/header.html</code> を開いて、以下を記述します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ .Site.Title }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p><code>mytheme/layouts/partials/footer.html</code> を開いて、以下を記述します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{{ .Site.Copyright }}
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p><code>mytheme/layouts/index.html</code> を開いて、以下を記述します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;{{ .Site.LanguageCode }}&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/css/main.css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="hll">    {{ partial &quot;header.html&quot; . }}
+</span>    <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">main</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
+      トップページだよ
+    <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+<span class="hll">    {{ partial &quot;footer.html&quot; . }}
+</span>    <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+</ul>
+<p>他のテンプレートからパーシャルテンプレートを呼び出す場合は、<code>{{ partial "&lt;PATH&gt;/&lt;FILE_NAME&gt;.html" . }}</code> と記述します。パス名は <code>layouts/partials</code> 以降のパスです。</p>
+<h2 id="_5">ベーステンプレート<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">概要<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>さきほど定義した、トップページにあたる<code>index.html</code> には <code>&lt;html&gt;</code>タグや<code>&lt;head&gt;</code>タグ内のヘッダ情報などが含まれています。
+この場合、記事ページにあたる<code>single.html</code> や一覧ページの<code>list.html</code> にも同じように<code>&lt;html&gt;</code>タグなどの記述が必要です。</p>
+<p><code>&lt;html&gt;</code>タグなどはサイトで共通なので、<code>index.html</code> には<code>&lt;main&gt;</code>タグの中身（トップページに書きたいコンテンツ）だけにして、共通部分は別に定義してみましょう。</p>
+<p>このとき利用するのが、<a href="https://gohugo.io/templates/base/">ベーステンプレート</a>です。ベーステンプレートは <code>/layouts/_default/baseof.html</code> に記述します。</p>
+<h3 id="_7">部品化してみる<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><code>mytheme/layouts/index.html</code> を開いて、以下のように修正します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{{ define &quot;main&quot; }}
+  トップページだよ
+{{ end }}
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p><code>mytheme/layouts/_default/single.html</code> を開いて、以下を記述します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{{ define &quot;main&quot; }}
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>{{ .Title }}<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  {{ .Content }}
+{{ end }}
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p><code>mytheme/layouts/_default/baseof.html</code> を開いて、以下のように修正します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;{{ .Site.LanguageCode }}&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/css/main.css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+    {{ partial &quot;header.html&quot; . }}
+    <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">main</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
+<span class="hll">    {{ block &quot;main&quot; . }} {{ end }}
+</span>    <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+    {{ partial &quot;footer.html&quot; . }}
+    <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+</ul>
+<p><code>{{ define "定義名" }} ... {{ end }}</code> で定義した内容を呼び出すには、<code>{{ block "定義名" . }} {{ end }}</code> として記述します。</p>
+<h2 id="_8">動作確認<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>動作確認してみましょう。</p>
+<ol>
+<li>
+<p>フッター部分で<code>{{ .Site.Copyright }}</code> とサイト設定の変数を呼び出しているので、<code>config.toml</code> に <code>copyright</code> を追記します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">baseURL</span> <span class="o">=</span> <span class="s">&quot;http://example.org/&quot;</span>
+<span class="n">languageCode</span> <span class="o">=</span> <span class="s">&quot;en-us&quot;</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s">&quot;My New Hugo Site&quot;</span>
+<span class="n">theme</span> <span class="o">=</span> <span class="s">&quot;mytheme&quot;</span>
+<span class="hll"><span class="n">copyright</span> <span class="o">=</span> <span class="s">&quot;copyright © foo&quot;</span>
+</span></pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>開発サーバを起動します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ hugo server
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p><code>http://localhost:1313/</code> および <code>http://localhost:1313/sample/</code> にアクセスします。</p>
+<ul>
+<li>
+<p>http://localhost:1313/
+   <img alt="一覧ページの確認" src="../img/06_partial_baseof-top.png" /></p>
+</li>
+<li>
+<p>http://localhost:1313/sample/
+   <img alt="一覧ページの確認" src="../img/06_partial_baseof-article.png" /></p>
+</li>
+</ul>
+</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../05_theme-directory/" class="btn btn-neutral" title="テーマテンプレートの構成"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../05_theme-directory/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
