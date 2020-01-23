@@ -19,10 +19,11 @@ nav:
   - テーマの作成:
     - 02_theme/01_create-site.md
     - 02_theme/02_create-quick-theme.md
-    - 02_theme/03.hugo-syntax.md
     - 02_theme/04_kind-template.md
     - 02_theme/05_theme-directory.md
     - 02_theme/06_partial.md
+  - HUGO テンプレートシンタックス:
+    - 03_hugo-template-syntax/01_base.md
 markdown_extensions:
   - toc:
       permalink: True

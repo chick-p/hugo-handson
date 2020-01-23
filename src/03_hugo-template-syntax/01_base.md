@@ -1,4 +1,4 @@
-# HUGO テンプレートのシンタックスを知る
+# テンプレートのシンタックスを学ぶ
 
 HUGO のテンプレート構文についての概要を説明します。
 
@@ -9,12 +9,12 @@ HUGO のテンプレート構文についての概要を説明します。
 HUGO のテンプレートで HTML を生成する機能は、GO 言語のテンプレートエンジンを利用しています。
 そのため、テンプレートファイルは HTML とテンプレート記法を組み合わせて記述します。
 
-## 基本構文 {{ }}
+## {{ }}
 
-テンプレートファイルの中で、HUGO の変数や関数は `{{ .変数名 }}` や `{{ .関数名 引数1 引数2 }}` のように記述します。
+テンプレートファイル内で、HUGO の変数や関数は `{{ .変数名 }}` や `{{ .関数名 引数1 引数2 }}` のように記述します。
 HUGO では、`{{ }}`（mustache 記法）で囲まれた中身をテンプレートエンジンでの処理結果を置き換えて HTML に出力します。
 
-なお、`{{` の後と `}}` の前のスペースは無くても動きます。ただ、可読性を高めるためにつけたほうが良いとおもっています。
+`{{ }}` 内の前のスペースは無くても動きます。ただ、可読性を高めるためにつけたほうが良いとおもっています。
 
 以下は、テンプレートの記述と結果の例です。
 
@@ -56,35 +56,47 @@ HUGO では、`{{ }}`（mustache 記法）で囲まれた中身をテンプレ�
 `{{ range コレクション名 }} ~ {{ end }}` はループ関数です（参考：[Functions - range](https://gohugo.io/functions/range/)）。
 引数として与えられたコレクション名（配列）をひとつずつ取り出し、取り出した要素に対し `{{range}}{{end}}` で囲った中で処理をします。
 
-## . が指すもの
+## ドット（`.`）が指すオブジェクト
 
-変数や関数の前にある `.` は、表示する場所によって意味が異なりますが、基本的にはそのページ自体を指しています。
-`index.html` はサイトのトップページなので、 `.` はトップページを指しています。
+HUGO のテンプレートでは、`.` を使って変数にアクセスします。
+このドットが指すオブジェクトは、コンテキスト（＝表示する場所）によって内容が異なります。
+
+たとえば、`index.html` はサイトのトップページ（ホームページ）なので、 `.` はトップページのオブジェクトを指しています。
 
     :::html
     <h1>{{ .Site.Title }}</h1>
 
-`single.html` は記事ページのテンプレートなので、`.` は、個々の記事ページを指しています。
+`single.html` は記事ページのテンプレートなので、`.` は、それぞれの記事ページのオブジェクトを指しています。
 
     :::html
     <h1>{{ .Title }}</h1> <!-- .Title はその記事ページのタイトルを指す -->
     {{ .Content }} <!-- .Title はその記事ページのコンテンツを指す -->
 
-`index.html` が次に示す内容だった場合、`{{ .Site.Title }}` `{{ range .Site.RegularPages }}` と `{{ .RelPermalink }}` `{{ .Title }}` の `.` が指す中身は異なります。
+`index.html` が次に示す内容だった場合、`{{ .Site.Title }}` `{{ range .Site.RegularPages }}` と、`{{ .RelPermalink }}` `{{ .Title }}` の `.` が指す中身は異なります。
 
     :::html
     <h1>{{ .Site.Title }}</h1> <!-- .Site の . はトップページ -->
     <ul>
+      <!-- range は繰り返し関数で、RegularPages はサイト内の記事ページ一覧を指します -->
       {{ range .Site.RegularPages }}  <!-- .Site の . はトップページ -->
-        <!-- RegularPages は、サイト内の記事ページの一覧 を指しています -->
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         <!-- .RelPermalink や .Title の . は取り出した要素なので、個々の記事ページを指す -->
       {{ end }}
     </ul>
 
-## テンプレートで使える変数
-テンプレートで使える変数は、ページの種類によって異なります。これらは [Templates](https://gohugo.io/templates/) で確認できます。
+`$.` はコンテキストに関わらず、現在のページのオブジェクトを指します。たとえばループ内でもページタイトルを呼び出したいというときに使います。
+
+## 変数
+
+ページの種類によって、`.` から呼び出せる変数は異なります。
+
+これらは [Templates](https://gohugo.io/templates/) で確認できます。
 
 - トップページのテンプレートで使える変数：[Homepage Templates](https://gohugo.io/templates/homepage/)
+    - [page variables](https://gohugo.io/variables/page/)
+    - [site variables](https://gohugo.io/variables/site/)
 - 記事のテンプレートで使える変数：[Single Page Templates](https://gohugo.io/templates/single-page-templates/)
+    - [page variables](https://gohugo.io/variables/page/)
+    - [site variables](https://gohugo.io/variables/site/)
 - 一覧のテンプレートで使える変数：[List of Content in Hugo](https://gohugo.io/templates/lists/)
+    - [page variables](https://gohugo.io/variables/page/)
