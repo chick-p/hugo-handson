@@ -38,6 +38,9 @@ pre {
   border: none;
   border-radius: 3px;
 }
+.rst-content img {
+  border: 1px solid #ccc;
+}
 
 .rst-content table.docutils td {
   padding: 0;
