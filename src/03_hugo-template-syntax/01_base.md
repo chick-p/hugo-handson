@@ -85,18 +85,3 @@ HUGO のテンプレートでは、`.` を使って変数にアクセスしま�
     </ul>
 
 `$.` はコンテキストに関わらず、現在のページのオブジェクトを指します。たとえばループ内でもページタイトルを呼び出したいというときに使います。
-
-## 変数
-
-ページの種類によって、`.` から呼び出せる変数は異なります。
-
-これらは [Templates](https://gohugo.io/templates/) で確認できます。
-
-- トップページのテンプレートで使える変数：[Homepage Templates](https://gohugo.io/templates/homepage/)
-    - [page variables](https://gohugo.io/variables/page/)
-    - [site variables](https://gohugo.io/variables/site/)
-- 記事のテンプレートで使える変数：[Single Page Templates](https://gohugo.io/templates/single-page-templates/)
-    - [page variables](https://gohugo.io/variables/page/)
-    - [site variables](https://gohugo.io/variables/site/)
-- 一覧のテンプレートで使える変数：[List of Content in Hugo](https://gohugo.io/templates/lists/)
-    - [page variables](https://gohugo.io/variables/page/)
