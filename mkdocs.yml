@@ -24,7 +24,7 @@ nav:
     - 02_theme/06_partial.md
   - HUGO テンプレートシンタックス:
     - 03_hugo-template-syntax/01_base.md
-    - 03_hugo-template-syntax/02_custom-variable.md
+    - 03_hugo-template-syntax/02_base2.md
 markdown_extensions:
   - toc:
       permalink: True
