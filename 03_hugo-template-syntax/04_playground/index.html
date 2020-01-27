@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>HUGO の関数・変数を使って、サイトあるあるを作ってみる - HUGO</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "HUGO \u306e\u95a2\u6570\u30fb\u5909\u6570\u3092\u4f7f\u3063\u3066\u3001\u30b5\u30a4\u30c8\u3042\u308b\u3042\u308b\u3092\u4f5c\u3063\u3066\u307f\u308b";
+    var mkdocs_page_input_path = "03_hugo-template-syntax/04_playground.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/toml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HUGO</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">事前準備</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/00_hugo/">HUGO の開発環境の構築</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/01_vscode/">VSCode のインストールと設定</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/02_git/">Gitのインストールと設定</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">サイトと記事作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/00_add-site/">HUGO でサイトを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/01_add-article/">コンテンツ（記事）を作成する</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">テーマの作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../02_theme/01_create-site/">サンプルサイトとその構成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/02_create-quick-theme/">テーマテンプレートを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/04_kind-template/">ページの種類を学ぶ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/05_theme-directory/">テーマテンプレートの構成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/06_partial/">テンプレートを部品化する</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">HUGO テンプレートシンタックス</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../01_base/">シンタックスの基本</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../02_base2/">変数・カスタム変数・トリム・関数・部分テンプレート定義</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../03_base3/">条件分岐</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">HUGO の関数・変数を使って、サイトあるあるを作ってみる</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#hugo">HUGO の関数・変数を使って、サイトあるあるを作ってみる</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">次のページ、前のページへのリンクを表示する</a></li>
+        
+            <li><a class="toctree-l4" href="#_2">セクション内のページ一覧を表示する</a></li>
+        
+            <li><a class="toctree-l4" href="#_3">同一セクションのページ一覧を表示する</a></li>
+        
+            <li><a class="toctree-l4" href="#_4">最近作成した記事を表示する</a></li>
+        
+            <li><a class="toctree-l4" href="#_5">記事の目次を表示する</a></li>
+        
+            <li><a class="toctree-l4" href="#_6">サイト内の全ページ一覧を階層表示する</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HUGO</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>HUGO テンプレートシンタックス &raquo;</li>
+        
+      
+    
+    <li>HUGO の関数・変数を使って、サイトあるあるを作ってみる</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="hugo">HUGO の関数・変数を使って、サイトあるあるを作ってみる<a class="headerlink" href="#hugo" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="_1">次のページ、前のページへのリンクを表示する<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>前のページや次のページがあれば、そのページへのリンクを表示します。</p>
+<p>■に当てはまる変数・関数を <a href="https://gohugo.io/documentation/">HUGO ドキュメント</a>から探してみましょう。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="err">■</span> <span class="nv">.PrevInSection</span> <span class="cp">}}</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="err">■</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>＜ 前のページへ<span class="nt">&lt;/a&gt;</span>
+<span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+<span class="cp">{{</span> <span class="err">■</span> <span class="nv">.NextInSection</span> <span class="cp">}}</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="err">■</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>次のページへ ＞<span class="nt">&lt;/a&gt;</span>
+<span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+</pre></div>
+</td></tr></table>
+
+<details><summary>解答</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="k">with</span> <span class="nv">.PrevInSection</span> <span class="cp">}}</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>＜ 前のページへ<span class="nt">&lt;/a&gt;</span>
+<span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+<span class="cp">{{</span> <span class="k">with</span> <span class="nv">.NextInSection</span> <span class="cp">}}</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>次のページへ ＞<span class="nt">&lt;/a&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>「...があれば」なので <code>with</code> を使います。</li>
+<li>そのページからの相対リンクを取得するには、<code>.RelPermalink</code> を使います。</li>
+</ul>
+</div>
+</details>
+<p><br /></p>
+<h2 id="_2">セクション内のページ一覧を表示する<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>表示しているページ以下にあるセクション（カテゴリ）の記事ページの一覧を表示します。</p>
+<p>■に当てはまる変数・関数を <a href="https://gohugo.io/documentation/">HUGO ドキュメント</a>から探してみましょう。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;h3&gt;</span>このカテゴリー以下の記事一覧<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="cp">{{</span> <span class="err">■</span> <span class="err">■</span> <span class="cp">}}</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
+  <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<details><summary>解答</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;h3&gt;</span>このカテゴリー以下の記事一覧<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="cp">{{</span> <span class="nv">range</span> <span class="nv">.Pages</span> <span class="cp">}}</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
+  <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>記事一覧は <code>.Pages</code> で取得できます。</li>
+<li>リストなので <code>range</code> で回します。</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ページの一覧は、デフォルトでは次の順にソートされます。</p>
+<p>Weight &gt; Date &gt; LinkTitle &gt; FilePath</p>
+<p>次のように書くと、並び順を指定できます</p>
+<ul>
+<li>Pages.ByWight</li>
+<li>Pages.ByDate</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>.Pages</code> は、記事ページの一覧とセクションページを取得します。カテゴリの記事ページのみ取得したい場合は <code>.RegularPages</code> を使います。</p>
+<ul>
+<li><code>.Pages</code> 記事ページの一覧とセクションページ</li>
+<li><code>.RegularPages</code> 記事ページの一覧</li>
+<li><code>.Sections</code> セクションページの一覧</li>
+</ul>
+</div>
+</details>
+<p><br /></p>
+<h2 id="_3">同一セクションのページ一覧を表示する<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>表示しているページと同一セクション内のページ一覧を表示します。</p>
+<p>■に当てはまる変数・関数を <a href="https://gohugo.io/documentation/">HUGO ドキュメント</a>から探してみましょう。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;h3&gt;</span>このカテゴリーの記事一覧<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="cp">{{</span> <span class="err">■</span> <span class="err">■</span> <span class="cp">}}</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
+  <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<details><summary>解答</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;h3&gt;</span>このカテゴリーの記事一覧<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="cp">{{</span> <span class="nv">range</span> <span class="nv">.CurrentSection.Pages</span> <span class="cp">}}</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
+  <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>現在表示している記事が所属するセクションの記事は <code>.CurrentSection.Pages</code> で取得します。</li>
+</ul>
+</div>
+</details>
+<p><br /></p>
+<h2 id="_4">最近作成した記事を表示する<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>サイト内の記事を作成日 (frontmatter の <code>date</code> の値) 順に表示してみましょう。</p>
+<p>■に当てはまる変数・関数を <a href="https://gohugo.io/documentation/">HUGO ドキュメント</a>から探してみましょう。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;h2&gt;</span>新着記事<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="cp">{{</span> <span class="nv">range</span> <span class="nv">first</span> <span class="m">5</span> <span class="nv">.Site.RegularPages</span><span class="err">.■</span><span class="nv">.Reverse</span> <span class="cp">}}</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;b&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/a&gt;&lt;/b&gt;</span>
+      <span class="nt">&lt;time&gt;</span><span class="cp">{{</span> <span class="nv">.Date.Format</span> <span class="s2">&quot;2006-01-02&quot;</span> <span class="cp">}}</span><span class="nt">&lt;/time&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<details><summary>解答</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;h2&gt;</span>新着記事<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="cp">{{</span> <span class="nv">range</span> <span class="nv">first</span> <span class="m">5</span> <span class="nv">.Site.RegularPages.ByDate.Reverse</span> <span class="cp">}}</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;b&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/a&gt;&lt;/b&gt;</span>
+      <span class="nt">&lt;time&gt;</span><span class="cp">{{</span> <span class="nv">.Date.Format</span> <span class="s2">&quot;2006-01-02&quot;</span> <span class="cp">}}</span><span class="nt">&lt;/time&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>記事一覧は <code>.Site.RegularPages</code> で取得できます（参照: <a href="https://gohugo.io/templates/lists/">List Of Content in Hugo</a>）</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><code>Site.RegularPages.ByLastmod.Reverse</code> とすると、最終更新日 (lastmod) 順にも並び替えできます。</li>
+<li>frontmatter に <code>lastmod</code> が定義されていない場合は、<code>date</code> の値が利用されます。</li>
+</ul>
+</div>
+</details>
+<p><br /></p>
+<h2 id="_5">記事の目次を表示する<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>記事内の見出しを使って目次を出力します。</p>
+<p>■に当てはまる変数・関数を <a href="https://gohugo.io/documentation/">HUGO ドキュメント</a>から探してみましょう。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;h2&gt;</span>目次<span class="nt">&lt;/h2&gt;</span>
+<span class="cp">{{</span> <span class="err">■</span> <span class="cp">}}</span>
+</pre></div>
+</td></tr></table>
+
+<details><summary>解答</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;h2&gt;</span>目次<span class="nt">&lt;/h2&gt;</span>
+<span class="cp">{{</span> <span class="nv">.TableOfContents</span> <span class="cp">}}</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>記事内の目次は <code>.TableOfContents</code> で取得します。</p>
+</div>
+</details>
+<p><br /></p>
+<h2 id="_6">サイト内の全ページ一覧を階層表示する<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>サイト内の全ページをツリー状に出力してみましょう。</p>
+<p>以下のコードをホームページ用のテンプレート（<code>layouts/index.html</code>）に適用します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">{{</span><span class="o">-</span> <span class="nv">define</span> <span class="s2">&quot;hierarchy&quot;</span> <span class="cp">}}</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
+      <span class="cp">{{</span><span class="o">/*</span> <span class="err">カレントセクション直下のセクションは再帰処理</span> <span class="o">*/</span><span class="cp">}}</span>
+      <span class="cp">{{</span><span class="o">-</span> <span class="nv">range</span> <span class="nv">.Sections</span> <span class="cp">}}</span>
+        <span class="cp">{{</span><span class="o">-</span> <span class="nv">template</span> <span class="s2">&quot;hierarchy&quot;</span> <span class="err">.</span> <span class="cp">}}</span>
+      <span class="cp">{{</span><span class="o">-</span> <span class="nv">end</span> <span class="cp">}}</span>
+      <span class="cp">{{</span><span class="o">-</span> <span class="o">/*</span> <span class="err">カレントセクション直下の記事ページ</span> <span class="o">*/</span><span class="cp">}}</span>
+      <span class="nt">&lt;ul&gt;</span>
+        <span class="cp">{{</span><span class="o">-</span> <span class="nv">range</span> <span class="nv">.RegularPages</span> <span class="cp">}}</span>
+          <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
+        <span class="cp">{{</span><span class="o">-</span> <span class="nv">end</span> <span class="cp">}}</span>
+      <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="cp">{{</span><span class="o">-</span> <span class="nv">end</span> <span class="cp">}}</span>
+
+<span class="nt">&lt;h2&gt;</span>全ページのリスト<span class="nt">&lt;/h2&gt;</span>
+<span class="cp">{{</span> <span class="nv">template</span> <span class="s2">&quot;hierarchy&quot;</span> <span class="nv">.Site.Home</span> <span class="cp">}}</span>
+</pre></div>
+</td></tr></table>
+
+<p>このコードでは、部分テンプレート <code>hierarchy</code> を定義し、<code>.Site.Home</code> をルートに設定して <code>hierarchy</code> を再帰的に呼び出しています。
+<code>.Site.Home</code> はホームページオブジェクトで、サイト内のページ情報が入っています。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>1回目の呼び出し<ul>
+<li><code>.Site.Home</code> のタイトル＝サイトタイトルを出力（3行目）</li>
+<li>セクションがあれば、そのセクションページをルートに設定して <code>hierarchy</code> を呼び出し（5-7行目）</li>
+<li>同一階層に記事があれば記事タイトルを出力（10-12行目）</li>
+</ul>
+</li>
+<li>2回目の呼び出し（2階層目）<ul>
+<li>2階層目にあたるセクションページのタイトルを出力</li>
+<li>セクションがあればそのセクションページをルートに設定して <code>hierarchy</code> を呼び出し（5-7行目）</li>
+<li>同一階層に記事があれば記事タイトルを出力（10-12行目）</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>下記のような階層構造のとき、</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>content
+├── section1
+│   ├── _index.md
+│   ├── section1-1
+│   │   ├── _index.md
+│   │   └── section1-1_article.md
+│   └── section1_artcle.md
+└── section2
+    ├── _index.md
+    └── section2-1
+        ├── _index.md
+        └── sample.md
+</pre></div>
+</td></tr></table>
+
+<p>出力されるイメージは次のとおりです。</p>
+<p><strong>全ページのリスト</strong></p>
+<ul>
+<li>HomePage</li>
+<li>Section1 SectionPage<ul>
+<li>Section1-1 SectionPage</li>
+<li>Section1-1 の ArticlePage</li>
+<li>Section1 の ArticlePage</li>
+</ul>
+</li>
+<li>Section2 SectionPage<ul>
+<li>Section2-1 SectionPage</li>
+<li>Section2-1 の ArticlePage</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../03_base3/" class="btn btn-neutral" title="条件分岐"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../03_base3/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

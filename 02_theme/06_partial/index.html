@@ -142,11 +142,19 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../03_hugo-template-syntax/01_base/">テンプレートのシンタックス その1</a>
+    <a class="" href="../../03_hugo-template-syntax/01_base/">シンタックスの基本</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../03_hugo-template-syntax/02_base2/">テンプレートのシンタックス その2</a>
+    <a class="" href="../../03_hugo-template-syntax/02_base2/">変数・カスタム変数・トリム・関数・部分テンプレート定義</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../03_hugo-template-syntax/03_base3/">条件分岐</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../03_hugo-template-syntax/04_playground/">HUGO の関数・変数を使って、サイトあるあるを作ってみる</a>
                 </li>
     </ul>
 	    </li>
@@ -237,14 +245,14 @@ HUGO ではこれらの部品化したテンプレートのことを「<a href="
 <ul>
 <li>
 <p><code>mytheme/layouts/partials/header.html</code> を開いて、以下を記述します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ .Site.Title }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">.Site.Title</span> <span class="cp">}}</span><span class="nt">&lt;/h1&gt;</span>
 </pre></div>
 </td></tr></table>
 
 </li>
 <li>
 <p><code>mytheme/layouts/partials/footer.html</code> を開いて、以下を記述します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{{ .Site.Copyright }}
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="nv">.Site.Copyright</span> <span class="cp">}}</span><span class="x"></span>
 </pre></div>
 </td></tr></table>
 
@@ -270,21 +278,21 @@ HUGO ではこれらの部品化したテンプレートのことを「<a href="
 17
 18
 19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;{{ .Site.LanguageCode }}&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.Site.LanguageCode</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/css/main.css&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="k">if</span> <span class="k">not</span> <span class="nv">.IsHome</span> <span class="cp">}}{{</span> <span class="nv">.Title</span> <span class="cp">}}</span> | <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}{{</span> <span class="nv">.Site.Title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
-<span class="hll">    {{ partial &quot;header.html&quot; . }}
+<span class="hll">    <span class="cp">{{</span> <span class="nv">partial</span> <span class="s2">&quot;header.html&quot;</span> <span class="err">.</span> <span class="cp">}}</span>
 </span>    <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">main</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
       トップページだよ
     <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
-<span class="hll">    {{ partial &quot;footer.html&quot; . }}
+<span class="hll">    <span class="cp">{{</span> <span class="nv">partial</span> <span class="s2">&quot;footer.html&quot;</span> <span class="err">.</span> <span class="cp">}}</span>
 </span>    <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -306,9 +314,9 @@ HUGO ではこれらの部品化したテンプレートのことを「<a href="
 <p><code>mytheme/layouts/index.html</code> を開いて、以下のように修正します。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{{ define &quot;main&quot; }}
-  トップページだよ
-{{ end }}
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="nv">define</span> <span class="s2">&quot;main&quot;</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">  トップページだよ</span>
+<span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span><span class="x"></span>
 </pre></div>
 </td></tr></table>
 
@@ -318,10 +326,10 @@ HUGO ではこれらの部品化したテンプレートのことを「<a href="
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{{ define &quot;main&quot; }}
-  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>{{ .Title }}<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-  {{ .Content }}
-{{ end }}
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="nv">define</span> <span class="s2">&quot;main&quot;</span> <span class="cp">}}</span>
+  <span class="nt">&lt;h2&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/h2&gt;</span>
+  <span class="cp">{{</span> <span class="nv">.Content</span> <span class="cp">}}</span>
+<span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
 </pre></div>
 </td></tr></table>
 
@@ -347,21 +355,21 @@ HUGO ではこれらの部品化したテンプレートのことを「<a href="
 17
 18
 19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;{{ .Site.LanguageCode }}&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.Site.LanguageCode</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/css/main.css&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="k">if</span> <span class="k">not</span> <span class="nv">.IsHome</span> <span class="cp">}}{{</span> <span class="nv">.Title</span> <span class="cp">}}</span> | <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}{{</span> <span class="nv">.Site.Title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
-    {{ partial &quot;header.html&quot; . }}
+    <span class="cp">{{</span> <span class="nv">partial</span> <span class="s2">&quot;header.html&quot;</span> <span class="err">.</span> <span class="cp">}}</span>
     <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">main</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
-<span class="hll">    {{ block &quot;main&quot; . }} {{ end }}
+<span class="hll">    <span class="cp">{{</span> <span class="nb">block</span> <span class="s2">&quot;main&quot;</span> <span class="err">.</span> <span class="cp">}}</span> <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
 </span>    <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
-    {{ partial &quot;footer.html&quot; . }}
+    <span class="cp">{{</span> <span class="nv">partial</span> <span class="s2">&quot;footer.html&quot;</span> <span class="err">.</span> <span class="cp">}}</span>
     <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -417,7 +425,7 @@ HUGO ではこれらの部品化したテンプレートのことを「<a href="
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../03_hugo-template-syntax/01_base/" class="btn btn-neutral float-right" title="テンプレートのシンタックス その1">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../03_hugo-template-syntax/01_base/" class="btn btn-neutral float-right" title="シンタックスの基本">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../05_theme-directory/" class="btn btn-neutral" title="テーマテンプレートの構成"><span class="icon icon-circle-arrow-left"></span> Previous</a>

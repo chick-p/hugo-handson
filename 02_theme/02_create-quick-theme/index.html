@@ -144,11 +144,19 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../03_hugo-template-syntax/01_base/">テンプレートのシンタックス その1</a>
+    <a class="" href="../../03_hugo-template-syntax/01_base/">シンタックスの基本</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../03_hugo-template-syntax/02_base2/">テンプレートのシンタックス その2</a>
+    <a class="" href="../../03_hugo-template-syntax/02_base2/">変数・カスタム変数・トリム・関数・部分テンプレート定義</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../03_hugo-template-syntax/03_base3/">条件分岐</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../03_hugo-template-syntax/04_playground/">HUGO の関数・変数を使って、サイトあるあるを作ってみる</a>
                 </li>
     </ul>
 	    </li>
@@ -253,7 +261,7 @@ $ code .
 </li>
 <li>
 <p>見出しタグを記載します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ .Site.Title }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">.Site.Title</span> <span class="cp">}}</span><span class="nt">&lt;/h1&gt;</span>
 </pre></div>
 </td></tr></table>
 
@@ -285,8 +293,8 @@ $ code .
 <li>
 <p>次の内容を記載します。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ .Title }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-{{ .Content }}
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/h1&gt;</span>
+<span class="cp">{{</span> <span class="nv">.Content</span> <span class="cp">}}</span>
 </pre></div>
 </td></tr></table>
 
@@ -334,12 +342,12 @@ $ code .
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ .Site.Title }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="hll"><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-</span><span class="hll">  {{ range .Site.RegularPages }}
-</span><span class="hll">  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ .RelPermalink }}&quot;</span><span class="p">&gt;</span>{{ .Title }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span><span class="hll">  {{ end }}
-</span><span class="hll"><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">.Site.Title</span> <span class="cp">}}</span><span class="nt">&lt;/h1&gt;</span>
+<span class="hll"><span class="nt">&lt;ul&gt;</span>
+</span><span class="hll">  <span class="cp">{{</span> <span class="nv">range</span> <span class="nv">.Site.RegularPages</span> <span class="cp">}}</span>
+</span><span class="hll">  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+</span><span class="hll">  <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+</span><span class="hll"><span class="nt">&lt;/ul&gt;</span>
 </span></pre></div>
 </td></tr></table>
 
