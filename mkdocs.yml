@@ -25,6 +25,7 @@ nav:
   - HUGO テンプレートシンタックス:
     - 03_hugo-template-syntax/01_base.md
     - 03_hugo-template-syntax/02_base2.md
+    - 03_hugo-template-syntax/03_base3.md
 markdown_extensions:
   - toc:
       permalink: True
@@ -33,6 +34,8 @@ markdown_extensions:
   - footnotes
   - codehilite:
       linenums: true
+  - pymdownx.details
+  - pymdownx.superfences
 extra_css:
   - "https://fonts.googleapis.com/earlyaccess/notosansjapanese.css"
   - "https://fonts.googleapis.com/css?family=Open+Sans:600,800"

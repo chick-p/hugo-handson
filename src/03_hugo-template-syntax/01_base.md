@@ -1,4 +1,4 @@
-# テンプレートのシンタックス その1
+# シンタックスの基本
 
 HUGO のテンプレート構文についての概要を説明します。
 
@@ -22,7 +22,7 @@ HUGO では、`{{ }}`（mustache 記法）で囲まれた中身をテンプレ�
 
 #### テンプレート
 
-    :::html
+    :::hugo
     <h1>{{ .Site.Title }}</h1>
 
 #### 出力結果
@@ -37,7 +37,7 @@ HUGO では、`{{ }}`（mustache 記法）で囲まれた中身をテンプレ�
 
 #### テンプレート
 
-    :::html
+    :::hugo
     <h1>{{ .Site.Title }}</h1>
     <ul>
       {{ range .Site.RegularPages }}
@@ -63,7 +63,7 @@ HUGO のテンプレートでは、`.` を使って変数にアクセスしま�
 
 たとえば、`index.html` はサイトのトップページ（ホームページ）なので、 `.` はトップページのオブジェクトを指しています。
 
-    :::html
+    :::hugo
     <h1>{{ .Site.Title }}</h1>
 
 `single.html` は記事ページのテンプレートなので、`.` は、それぞれの記事ページのオブジェクトを指しています。
@@ -74,13 +74,13 @@ HUGO のテンプレートでは、`.` を使って変数にアクセスしま�
 
 `index.html` が次に示す内容だった場合、`{{ .Site.Title }}` `{{ range .Site.RegularPages }}` と、`{{ .RelPermalink }}` `{{ .Title }}` の `.` が指す中身は異なります。
 
-    :::html
+    :::hugo
     <h1>{{ .Site.Title }}</h1> <!-- .Site の . はトップページ -->
     <ul>
-      <!-- range は繰り返し関数で、RegularPages はサイト内の記事ページ一覧を指します -->
+      {{/* range は繰り返し関数で、RegularPages はサイト内の記事ページ一覧を指します */}}
       {{ range .Site.RegularPages }}  <!-- .Site の . はトップページ -->
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-        <!-- .RelPermalink や .Title の . は取り出した要素なので、個々の記事ページを指す -->
+        {{/* .RelPermalink や .Title の . は取り出した要素なので、個々の記事ページを指す */}}
       {{ end }}
     </ul>
 

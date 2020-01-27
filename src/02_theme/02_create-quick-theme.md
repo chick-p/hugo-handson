@@ -44,7 +44,7 @@
 
 1. 見出しタグを記載します。
 
-        :::html
+        :::hugo
         <h1>{{ .Site.Title }}</h1>
 
 1. 開発サーバを起動します。
@@ -70,7 +70,7 @@
 
 1. 次の内容を記載します。
 
-        :::html
+        :::hugo
         <h1>{{ .Title }}</h1>
         {{ .Content }}
 
@@ -101,7 +101,7 @@
 1. `mytheme/layouts/index.html` をエディタで開きます。
 2. [トップのテンプレート作成](02_create-quick-theme.md#トップのテンプレート作成) で編集した内容に、以下の`<ul>〜</ul>`部分を追記します。
 
-        :::html hl_lines="2 3 4 5 6"
+        :::hugo hl_lines="2 3 4 5 6"
         <h1>{{ .Site.Title }}</h1>
         <ul>
           {{ range .Site.RegularPages }}
