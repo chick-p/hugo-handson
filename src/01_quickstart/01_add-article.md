@@ -34,11 +34,12 @@
         draft: true
         ---
 
+    !!! Note
         -  「---」で囲われた部分を、**Front matter** と呼びます。
         -  Front matter には記事のメタ情報を記載します。
         -  記事の中身は Front matter より下に記載します。
 
-1. 記事タイトルを入力します。Front matter の `title` に値を設定します。
+2. 記事タイトルを入力します。Front matter の `title` に値を設定します。
 
         :::yaml hl_lines="2"
         ---
@@ -47,7 +48,7 @@
         draft: true
         ---
 
-2. 下書きフラグ `draft` を `false` にして、ファイルがビルドされるようにします。
+3. 下書きフラグ `draft` を `false` にして、ファイルがビルドされるようにします。
 
         :::yaml hl_lines="4"
         ---
@@ -56,7 +57,7 @@
         draft: false
         ---
 
-3. 記事の内容を Front matter 以下に記述します。
+4. 記事の内容を Front matter 以下に記述します。
 
         :::yaml hl_lines="7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26"
         ---
@@ -65,33 +66,33 @@
         draft: false
         ---
 
-        + # 見出し
-        + これはテスト記事です。
+        # 見出し
+        これはテスト記事です。
 
-        + ## レベル2の見出し
-        + Markdown 記法で書きます。
+        ## レベル2の見出し
+        Markdown 記法で書きます。
 
-        + ### レベル3の見出し
+        ### レベル3の見出し
 
-        + * 箇条書き
-        +   - `-` でもかけます。
+        * 箇条書き
+          - `-` でもかけます。
 
-        + 1. aaa
-        + 2. bbb
-        + 3. ccc
+        1. aaa
+        2. bbb
+        3. ccc
 
-        + コードシンタックスは、バッククォート3つで囲みます。
+        コードシンタックスは、バッククォート3つで囲みます。
 
-        + ```
-        + const NAME = "piyo";
-        + ```
+        ```
+        const NAME = "piyo";
+        ```
 
-4. ファイルの変更を上書き保存し、もう一度ブラウザで確認します（開発サーバを起動済みの場合は、以下のコマンドは不要です）。
+5. ファイルの変更を上書き保存し、もう一度ブラウザで確認します（開発サーバを起動済みの場合は、以下のコマンドは不要です）。
 
         :::bash
         $ hugo server
 
-5. 記事の内容が反映されました。
+6. 記事の内容が反映されました。
 
     ![記事の反映](img/techdoc-add-content.png)
 
@@ -132,19 +133,16 @@ HUGO では、「content」ディレクトリーの下にフォルダーを追�
 
 1. 「techdoc」のv0.4 以降からセクションツリーを表示するには`menu_style` プロパティを `config.toml` に追記します。
 
-        :::toml hl_lines="5"
+        :::toml hl_lines="6 7"
         baseURL = "http://example.org/"
         languageCode = "en-us"
         title = "サンプルサイト"
         theme = "techdoc"
+
+        [Params]
         menu_style = "open-menu"
 
-2. 「content」ディレクトリーの下に「docs」というフォルダーを作成します。
-
-        :::bash
-        $ mkdir content/docs
-
-3. `hugo new ファイル名` コマンドで、docs のトップページと common ページのファイルを追加します。
+2. `hugo new ファイル名` コマンドで、docs のトップページと common ページのファイルを追加します。
 
         :::bash
         $ hugo new docs/_index.md
@@ -155,14 +153,14 @@ HUGO では、「content」ディレクトリーの下にフォルダーを追�
         - それ以外は好きに付けることができます。ファイル名はサイトのページ URL になります。
             - ファイル名が「docs/common.md」の場合、URL は「https://example.com/docs/common/」です。
 
-4. さらにその下の階層も作ってみましょう。
+3. さらにその下の階層も作ってみましょう。
 
         :::bash
         $ hugo new docs/record/_index.md
         $ hugo new docs/record/get-record.md
         $ hugo new docs/record/post-record.md
 
-5. 最終的に「content」以下の構成は、次のようになります。
+4. 最終的に「content」以下の構成は、次のようになります。
 
         :::bash
         content
@@ -175,9 +173,9 @@ HUGO では、「content」ディレクトリーの下にフォルダーを追�
         │   └── _index.md
         └──_index.md
 
-6. 「docs」セクションの下に「record」セクションが追加されました。
+5. 「docs」セクションの下に「record」セクションが追加されました。
 
-7. 作成したファイルを適当に編集します。
+6. 作成したファイルを適当に編集します。
 ただし、`draft` の値は `false` に変更して下書きモードをオフにします。
 
 8. ブラウザ（開発サーバを起動済みの場合は、以下のコマンドは不要です）で確認します。
