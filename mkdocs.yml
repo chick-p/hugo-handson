@@ -37,6 +37,7 @@ markdown_extensions:
       linenums: true
   - pymdownx.details
   - pymdownx.superfences
+  - attr_list
 extra_css:
   - "https://fonts.googleapis.com/earlyaccess/notosansjapanese.css"
   - "https://fonts.googleapis.com/css?family=Open+Sans:600,800"
