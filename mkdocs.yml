@@ -27,6 +27,9 @@ nav:
     - 03_hugo-template-syntax/02_base2.md
     - 03_hugo-template-syntax/03_base3.md
     - 03_hugo-template-syntax/04_playground.md
+  - ドキュメントサイトのテンプレート作成:
+    - 04_create-theme/01_abstract.md
+    - 04_create-theme/02_template-base.md
 markdown_extensions:
   - toc:
       permalink: True
