@@ -95,7 +95,7 @@
         
             <li><a class="toctree-l4" href="#_2">テーマの追加</a></li>
         
-            <li><a class="toctree-l4" href="#_3">開発サーバーでの確認</a></li>
+            <li><a class="toctree-l4" href="#_3">開発サーバでの確認</a></li>
         
             <li><a class="toctree-l4" href="#_4">テーマの設定</a></li>
         
@@ -159,6 +159,21 @@
                 <li class="">
                     
     <a class="" href="../../03_hugo-template-syntax/04_playground/">HUGO の関数・変数を使って、サイトあるあるを作ってみる</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">ドキュメントサイトのテンプレート作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../04_create-theme/01_abstract/">ドキュメントサイトのテンプレートを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../04_create-theme/02_template-base/">ベース部分を作る</a>
                 </li>
     </ul>
 	    </li>
@@ -287,11 +302,11 @@ $ git submodule add https://github.com/thingsym/hugo-theme-techdoc.git themes/te
 <p class="admonition-title">Note</p>
 <p>Github.com から zip をダウンロードして解凍したファイルを、直接「themes」以下に置くこともできます。この場合は、サブモジュールのように元のリポジトリが更新されても更新差分の反映はできません。</p>
 </div>
-<h2 id="_3">開発サーバーでの確認<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">開発サーバでの確認<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>ローカルに開発サーバを立ち上げて、サイトを確認します。</p>
 <ol>
 <li>
-<p>開発サーバーを立ち上げて確認するには <code>hugo server -t テーマ名</code> コマンドを実行します。
+<p>開発サーバを立ち上げて確認するには <code>hugo server -t テーマ名</code> コマンドを実行します。
 <code>-t テーマ名</code> はテーマを指定して開発サーバを立ち上げるオプションです。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ hugo server -t techdoc
 </pre></div>
@@ -299,7 +314,7 @@ $ git submodule add https://github.com/thingsym/hugo-theme-techdoc.git themes/te
 
 </li>
 <li>
-<p><code>http://localhost:1313/</code> に開発サーバーが立ち上がります。</p>
+<p><code>http://localhost:1313/</code> に開発サーバが立ち上がります。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -354,7 +369,7 @@ Press Ctrl+C to stop
 <p class="admonition-title">Note</p>
 <ul>
 <li>ディレクトリ下のファイルに変化があった場合（記事の追加・設定の変更）、自動でビルドされます。</li>
-<li>開発サーバーは <code>Ctrl + C</code>（mac の場合は <code>command + C</code>）で終了します。</li>
+<li>開発サーバは <code>Ctrl + C</code>（mac の場合は <code>command + C</code>）で終了します。</li>
 </ul>
 </div>
 <div class="admonition warning">

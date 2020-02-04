@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>テーマテンプレートの構成 - HUGO</title>
+  <title>ドキュメントサイトのテンプレートを作る - HUGO</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -21,8 +21,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "\u30c6\u30fc\u30de\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u306e\u69cb\u6210";
-    var mkdocs_page_input_path = "02_theme/05_theme-directory.md";
+    var mkdocs_page_name = "\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30b5\u30a4\u30c8\u306e\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u3092\u4f5c\u308b";
+    var mkdocs_page_input_path = "04_create-theme/01_abstract.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -99,35 +99,23 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../01_create-site/">サンプルサイトとその構成</a>
+    <a class="" href="../../02_theme/01_create-site/">サンプルサイトとその構成</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../02_create-quick-theme/">テーマテンプレートを作る</a>
+    <a class="" href="../../02_theme/02_create-quick-theme/">テーマテンプレートを作る</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../04_kind-template/">ページの種類を学ぶ</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">テーマテンプレートの構成</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#_1">テーマテンプレートの構成</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#_2">構成</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../../02_theme/04_kind-template/">ページの種類を学ぶ</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../06_partial/">テンプレートを部品化する</a>
+    <a class="" href="../../02_theme/05_theme-directory/">テーマテンプレートの構成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/06_partial/">テンプレートを部品化する</a>
                 </li>
     </ul>
 	    </li>
@@ -159,13 +147,27 @@
 		
     <span class="caption-text">ドキュメントサイトのテンプレート作成</span>
     <ul class="subnav">
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../04_create-theme/01_abstract/">ドキュメントサイトのテンプレートを作る</a>
+    <a class="current" href="./">ドキュメントサイトのテンプレートを作る</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">ドキュメントサイトのテンプレートを作る</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">ゴール</a></li>
+        
+            <li><a class="toctree-l4" href="#_3">方針</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../04_create-theme/02_template-base/">ベース部分を作る</a>
+    <a class="" href="../02_template-base/">ベース部分を作る</a>
                 </li>
     </ul>
 	    </li>
@@ -192,11 +194,11 @@
     
       
         
-          <li>テーマの作成 &raquo;</li>
+          <li>ドキュメントサイトのテンプレート作成 &raquo;</li>
         
       
     
-    <li>テーマテンプレートの構成</li>
+    <li>ドキュメントサイトのテンプレートを作る</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -206,104 +208,44 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">テーマテンプレートの構成<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>作成したテーマテンプレートの構成について説明します。</p>
+                <h1 id="_1">ドキュメントサイトのテンプレートを作る<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>実際にテーマテンプレートを作ってみましょう。</p>
 <hr />
-<h2 id="_2">構成<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>テーマのディレクトリの構成を見てみましょう。
-※がついているディレクトリやファイルは、今後触っていくディレクトリ・ファイルです。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>themes/mytheme
-├── LICENSE
-├── archetypes
-│   └── default.md
-├── layouts
-│   ├── <span class="m">404</span>.html
-│   ├── index.html
-│   ├── _default
-│   │   ├── baseof.html
-│   │   ├── list.html
-│   │   └── single.html
-│   └── partials
-│       ├── footer.html
-│       ├── head.html
-│       └── header.html
-├── static
-│   ├── css
-│   └── js
-└── theme.toml
-</pre></div>
-</td></tr></table>
-
-<h3 id="license">LICENSE<a class="headerlink" href="#license" title="Permanent link">&para;</a></h3>
-<p>テーマを配布するときのライセンスを定義します。</p>
-<h3 id="archetypes">archetypes<a class="headerlink" href="#archetypes" title="Permanent link">&para;</a></h3>
-<p>テーマ独自の記事ファイルのひな形を置くディレクトリです。</p>
-<h3 id="layouts">layouts※<a class="headerlink" href="#layouts" title="Permanent link">&para;</a></h3>
-<p>テーマのレイアウトファイルを置くディレクトリです。</p>
-<h4 id="layouts_1">layouts ディレクトリ直下<a class="headerlink" href="#layouts_1" title="Permanent link">&para;</a></h4>
+<h2 id="_2">ゴール<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>次のワイヤフレームをもつサイトを作ります。</p>
 <ul>
-<li>404.html※<ul>
-<li>404 エラーページのテンプレートです。空のファイルが生成されます。</li>
+<li>
+<p>ホームページ（トップページ）)</p>
+<p><img alt="" src="../img/goal-image-homepage.png" style="width:450px" /></p>
+</li>
+<li>
+<p>セクションページ（記事一覧ページ）</p>
+<p><img alt="" src="../img/goal-image-section.png" style="width:450px" /></p>
+</li>
+<li>
+<p>シングルページ（記事ページ）</p>
+<p><img alt="" src="../img/goal-image-single.png" style="width:450px" /></p>
+</li>
+</ul>
+<h2 id="_3">方針<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>共通部分を切り出してみましょう。</p>
+<ul>
+<li>
+<p>サイト全体に共通して、ヘッダーとフッターを含んでいます。</p>
+<p><img alt="" src="../img/goal-image-common1.png" style="width:500px;border:none;" /></p>
+<ul>
+<li><a href="../../02_theme/06_partial/#_5">ベーステンプレート</a>を使って定義し、ページの種類によって中央部分の内容が変わるようにテンプレートを作ります。</li>
+<li>さらにテンプレートの記述をシンプルにするため、ヘッダーとフッターは<a href="../../02_theme/06_partial/#_2">パーシャルテンプレート</a>として部品化したものを呼び出したほうがよさそうです。</li>
 </ul>
 </li>
-<li>index.html※<ul>
-<li>サイトのトップページのテンプレートです。</li>
+<li>
+<p>セクションページとシングルページを見比べると、カテゴリーツリーは共通しています。</p>
+<p><img alt="" src="../img/goal-image-common2.png" style="width:500px;border:none;" /></p>
+<ul>
+<li>カテゴリーツリー部分も共通なので、<a href="../../02_theme/06_partial/#_2">パーシャルテンプレート</a>として部品化したものを呼び出すとよさそうです。</li>
 </ul>
 </li>
 </ul>
-<h4 id="_default">_default 以下<a class="headerlink" href="#_default" title="Permanent link">&para;</a></h4>
-<h5 id="baseofhtml">baseof.html※<a class="headerlink" href="#baseofhtml" title="Permanent link">&para;</a></h5>
-<ul>
-<li>サイト全体のテンプレートです。</li>
-<li>このファイル内で、部品化した別のHTMLファイルで定義しているテンプレートを呼び出しています。</li>
-</ul>
-<h5 id="listhtml">list.html※<a class="headerlink" href="#listhtml" title="Permanent link">&para;</a></h5>
-<ul>
-<li>記事の一覧ページなどのテンプレートです。</li>
-<li>空のファイルが生成されます。</li>
-</ul>
-<h5 id="singlehtml">single.html※<a class="headerlink" href="#singlehtml" title="Permanent link">&para;</a></h5>
-<ul>
-<li>記事ページのテンプレートです。空ページが生成されます。</li>
-</ul>
-<h4 id="partials">partials 以下<a class="headerlink" href="#partials" title="Permanent link">&para;</a></h4>
-<h5 id="footerhtml">footer.html※<a class="headerlink" href="#footerhtml" title="Permanent link">&para;</a></h5>
-<ul>
-<li>フッター部分を記述するため部品化されたテンプレートです。</li>
-<li><code>baseof.html</code> から呼び出されています。</li>
-</ul>
-<h5 id="headhtml">head.html※<a class="headerlink" href="#headhtml" title="Permanent link">&para;</a></h5>
-<ul>
-<li><code>&lt;head&gt;</code> 要素内を記述するため部品化されたテンプレートです。</li>
-<li><code>baseof.html</code> から呼び出されています。</li>
-</ul>
-<h5 id="headerhtml">header.html※<a class="headerlink" href="#headerhtml" title="Permanent link">&para;</a></h5>
-<ul>
-<li>ヘッダー部分を記述するため部品化されたテンプレートです。</li>
-<li><code>baseof.html</code> から呼び出されています。</li>
-</ul>
-<h3 id="static">static※<a class="headerlink" href="#static" title="Permanent link">&para;</a></h3>
-<p>レイアウトファイルから参照する静的ファイル（css / js）を置くディレクトリです。</p>
-<h3 id="themetoml">theme.toml<a class="headerlink" href="#themetoml" title="Permanent link">&para;</a></h3>
-<p>テーマを配布するときのテーマ設定を定義します。</p>
               
             </div>
           </div>
@@ -311,10 +253,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../06_partial/" class="btn btn-neutral float-right" title="テンプレートを部品化する">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../02_template-base/" class="btn btn-neutral float-right" title="ベース部分を作る">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../04_kind-template/" class="btn btn-neutral" title="ページの種類を学ぶ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../03_hugo-template-syntax/04_playground/" class="btn btn-neutral" title="HUGO の関数・変数を使って、サイトあるあるを作ってみる"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -340,10 +282,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../04_kind-template/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../03_hugo-template-syntax/04_playground/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../06_partial/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../02_template-base/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

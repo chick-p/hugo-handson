@@ -157,6 +157,21 @@
     </ul>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <span class="caption-text">ドキュメントサイトのテンプレート作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../04_create-theme/01_abstract/">ドキュメントサイトのテンプレートを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../04_create-theme/02_template-base/">ベース部分を作る</a>
+                </li>
+    </ul>
+	    </li>
+          
         </ul>
       </div>
       &nbsp;
@@ -233,22 +248,22 @@
 2
 3
 4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nn">---</span>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nn">---</span>
 <span class="nt">title</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
 <span class="nt">date</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2019-11-15T12:56:53+09:00</span>
 <span class="nt">draft</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nn">---</span>
-
-<span class="p p-Indicator">-</span>  <span class="l l-Scalar l-Scalar-Plain">「---」で囲われた部分を、**Front matter** と呼びます。</span>
-<span class="p p-Indicator">-</span>  <span class="l l-Scalar l-Scalar-Plain">Front matter には記事のメタ情報を記載します。</span>
-<span class="p p-Indicator">-</span>  <span class="l l-Scalar l-Scalar-Plain">記事の中身は Front matter より下に記載します。</span>
 </pre></div>
 </td></tr></table>
 
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>「---」で囲われた部分を、<strong>Front matter</strong> と呼びます。</li>
+<li>Front matter には記事のメタ情報を記載します。</li>
+<li>記事の中身は Front matter より下に記載します。</li>
+</ul>
+</div>
 </li>
 <li>
 <p>記事タイトルを入力します。Front matter の <code>title</code> に値を設定します。</p>
@@ -313,26 +328,26 @@
 <span class="nt">draft</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="nn">---</span>
 
-<span class="hll"><span class="l l-Scalar l-Scalar-Plain">+</span> <span class="c1"># 見出し</span>
-</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ これはテスト記事です。</span>
+<span class="hll"><span class="c1"># 見出し</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">これはテスト記事です。</span>
 </span><span class="hll">
-</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+</span> <span class="c1">## レベル2の見出し</span>
-</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ Markdown 記法で書きます。</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">## レベル2の見出し</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">Markdown 記法で書きます。</span>
 </span><span class="hll">
-</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+</span> <span class="c1">### レベル3の見出し</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">### レベル3の見出し</span>
 </span><span class="hll">
-</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ * 箇条書き</span>
-</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+   - `-` でもかけます。</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">* 箇条書き</span>
+</span><span class="hll">  <span class="l l-Scalar l-Scalar-Plain">- `-` でもかけます。</span>
 </span><span class="hll">
-</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ 1. aaa</span>
-</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ 2. bbb</span>
-</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ 3. ccc</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">1. aaa</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">2. bbb</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">3. ccc</span>
 </span><span class="hll">
-</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ コードシンタックスは、バッククォート3つで囲みます。</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">コードシンタックスは、バッククォート3つで囲みます。</span>
 </span><span class="hll">
-</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ ```</span>
-</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ const NAME = &quot;piyo&quot;;</span>
-</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">+ ```</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">```</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">const NAME = &quot;piyo&quot;;</span>
+</span><span class="hll"><span class="l l-Scalar l-Scalar-Plain">```</span>
 </span></pre></div>
 </td></tr></table>
 
@@ -421,19 +436,16 @@
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">baseURL</span> <span class="o">=</span> <span class="s">&quot;http://example.org/&quot;</span>
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">baseURL</span> <span class="o">=</span> <span class="s">&quot;http://example.org/&quot;</span>
 <span class="n">languageCode</span> <span class="o">=</span> <span class="s">&quot;en-us&quot;</span>
 <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;サンプルサイト&quot;</span>
 <span class="n">theme</span> <span class="o">=</span> <span class="s">&quot;techdoc&quot;</span>
-<span class="hll"><span class="n">menu_style</span> <span class="o">=</span> <span class="s">&quot;open-menu&quot;</span>
-</span></pre></div>
-</td></tr></table>
 
-</li>
-<li>
-<p>「content」ディレクトリーの下に「docs」というフォルダーを作成します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mkdir content/docs
-</pre></div>
+<span class="hll"><span class="k">[Params]</span>
+</span><span class="hll"><span class="n">menu_style</span> <span class="o">=</span> <span class="s">&quot;open-menu&quot;</span>
+</span></pre></div>
 </td></tr></table>
 
 </li>
