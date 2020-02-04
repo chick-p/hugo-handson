@@ -3,7 +3,7 @@
 CSS を適用してみましょう。
 
 CSS ファイルは すでに `mytheme/layouts/partials/head.html` で読み込まれるように設定しているので、ファイルを置きます。
-静的ファイルは、`mytheme/static/` の下に置くことで読み込まれます。
+静的ファイルは、`テーマ名/static/` の下に置くことで読み込まれます。
 
 ---
 
@@ -81,7 +81,6 @@ CSS ファイルは すでに `mytheme/layouts/partials/head.html` で読み込�
 
     # http://localhost:1313/ にアクセスして確認
 
-- ホームページ（`http://localhost:1313/`）
-    ![ホームページ](img/03_css_index.png)
-
 CSS が適用されました。
+
+![ホームページ](img/03_css_index.png)

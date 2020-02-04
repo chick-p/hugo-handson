@@ -56,12 +56,12 @@
         検索ボックス
         </nav>
       </div>
-      <option class="language">
+      <nav class="language">
         <select name="language" onChange="location.href=value;">
           <option value="aaa.html">日本語</option>
           <option value="bbb.html">英語</option>
         </select>
-      </option>
+      </nav>
     </div>
 
 ## フッターの部分テンプレート

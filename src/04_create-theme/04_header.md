@@ -108,7 +108,7 @@
           </form>
         </nav>
       </div>
-      <option class="language">
+      <nav class="language">
       ...
 
 ### 検索アイコンの配置
