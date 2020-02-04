@@ -30,6 +30,7 @@ nav:
   - ドキュメントサイトのテンプレート作成:
     - 04_create-theme/01_abstract.md
     - 04_create-theme/02_template-base.md
+    - 04_create-theme/03_css.md
 markdown_extensions:
   - toc:
       permalink: True
