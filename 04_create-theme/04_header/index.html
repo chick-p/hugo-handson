@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>ヘッダーを作成する - HUGO</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u30d8\u30c3\u30c0\u30fc\u3092\u4f5c\u6210\u3059\u308b";
+    var mkdocs_page_input_path = "04_create-theme/04_header.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/toml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HUGO</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">事前準備</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/00_hugo/">HUGO の開発環境の構築</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/01_vscode/">VSCode のインストールと設定</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/02_git/">Gitのインストールと設定</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">サイトと記事作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/00_add-site/">HUGO でサイトを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/01_add-article/">コンテンツ（記事）を作成する</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">テーマの作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../02_theme/01_create-site/">サンプルサイトとその構成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/02_create-quick-theme/">テーマテンプレートを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/04_kind-template/">ページの種類を学ぶ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/05_theme-directory/">テーマテンプレートの構成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/06_partial/">テンプレートを部品化する</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">HUGO テンプレートシンタックス</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../03_hugo-template-syntax/01_base/">シンタックスの基本</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../03_hugo-template-syntax/02_base2/">変数・カスタム変数・トリム・関数・部分テンプレート定義</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../03_hugo-template-syntax/03_base3/">条件分岐</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../03_hugo-template-syntax/04_playground/">HUGO の関数・変数を使って、サイトあるあるを作ってみる</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">ドキュメントサイトのテンプレート作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../01_abstract/">ドキュメントサイトのテンプレートを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../02_template-base/">ベース部分を作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../03_css/">CSS を適用する</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">ヘッダーを作成する</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">ヘッダーを作成する</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">ロゴ</a></li>
+        
+            <li><a class="toctree-l4" href="#_7">検索ボックスの追加</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HUGO</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>ドキュメントサイトのテンプレート作成 &raquo;</li>
+        
+      
+    
+    <li>ヘッダーを作成する</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">ヘッダーを作成する<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>ヘッダー部分を作りこんでいきます。</p>
+<hr />
+<h2 id="_2">ロゴ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>サイトをカスタマイズするときに、テーマテンプレートを修正するのは手間がかかります。
+サイトごとに変更するようなロゴなどは、設定ファイルで変更できるようにします。</p>
+<h3 id="_3">設定ファイル<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>config.toml</code> を開きます。</li>
+<li><code>[params]</code> セクションを追加し、パラメータ <code>logo</code> パラメータを追加します。値には、画像のパスを指定します。<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">baseURL</span> <span class="o">=</span> <span class="s">&quot;http://example.org/&quot;</span>
+<span class="n">languageCode</span> <span class="o">=</span> <span class="s">&quot;en-us&quot;</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s">&quot;My New Hugo Site&quot;</span>
+<span class="n">theme</span> <span class="o">=</span> <span class="s">&quot;mytheme&quot;</span>
+
+<span class="hll"><span class="k">[params]</span>
+</span><span class="hll"><span class="n">logo</span> <span class="o">=</span> <span class="s">&quot;/img/logo.svg&quot;</span>
+</span></pre></div>
+</td></tr></table>
+
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>テーマオリジナルの設定を追加するときには、<code>[params]</code> セクションに設定値を追加します。</p>
+</div>
+<h3 id="_4">ロゴファイルの配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>画像は静的ファイルなので、<code>テーマ名/static</code> の下に置きます。</p>
+<ol>
+<li>
+<p>次の画像を <code>logo.svg</code> というファイル名で保存します。</p>
+<p><img alt="ロゴ" src="../img/logo.svg" style="width:100px;" /></p>
+</li>
+<li>
+<p><code>mytheme/static/</code> の下に <code>img</code> ディレクトリを作成し、その中に <code>logo.svg</code> を置きます。</p>
+</li>
+</ol>
+<h3 id="_5">テンプレートの修正<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><code>mytheme/layouts/partials/header.html</code> を開いて、黄色の部分を追加します（一部抜粋）。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;header-logo&quot;</span><span class="nt">&gt;</span>
+<span class="hll">    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">      <span class="cp">{{</span> <span class="k">with</span> <span class="nv">.Site.Params.logo</span> <span class="cp">}}</span><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">&quot;logo_img&quot;</span> <span class="na">src=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="err">.</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">      <span class="cp">{{</span> <span class="k">else</span> <span class="cp">}}{{</span> <span class="nv">.Site.Title</span> <span class="cp">}}{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+</span><span class="hll">    <span class="nt">&lt;/a&gt;</span>
+</span>  <span class="nt">&lt;/nav&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;header-menu-container&quot;</span><span class="nt">&gt;</span>
+  ...
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>[params]</code> セクション追加した設定値は <code>Site.Params.変数名</code> で呼び出しできます。</p>
+</div>
+<h3 id="css">css の修正<a class="headerlink" href="#css" title="Permanent link">&para;</a></h3>
+<p>ロゴの色が薄いので、フッター部分に背景色をつけます。ロゴも左寄せになっているので、余白を追加します。</p>
+<p><code>mytheme/static/css/default.css</code> を開き、黄色の部分を追記します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">header</span> <span class="p">{</span>
+  <span class="k">height</span><span class="p">:</span> <span class="mi">75</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>
+  <span class="k">border-bottom</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#ddd</span><span class="p">;</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+  <span class="k">justify-content</span><span class="p">:</span> <span class="kc">space-between</span><span class="p">;</span>
+  <span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+<span class="hll">  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#6c5b7b</span><span class="p">;</span>
+</span><span class="p">}</span>
+
+<span class="hll"><span class="p">.</span><span class="nc">header-logo</span> <span class="p">{</span>
+</span><span class="hll">  <span class="k">margin-left</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+</span><span class="hll"><span class="p">}</span>
+</span></pre></div>
+</td></tr></table>
+
+<h3 id="_6">動作確認<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>開発サーバを起動して確認してみましょう。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># /Hugo/Sites/theme_tutorial 内</span>
+$ hugo server
+
+<span class="c1"># http://localhost:1313/ にアクセスして確認</span>
+</pre></div>
+</td></tr></table>
+
+<p>ヘッダーの背景色が変わり、ロゴが追加されました。</p>
+<p><img alt="ホームページ" src="../img/04_header_logo.png" /></p>
+<h2 id="_7">検索ボックスの追加<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>検索フォームを追加します。</p>
+<h3 id="_8">テンプレートの修正<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><code>mytheme/layouts/partials/header.html</code> を開いて、黄色の部分を追加します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  ...
+  <span class="nt">&lt;/nav&gt;</span>
+<span class="hll">  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;header-menu-container&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">    <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;search-box&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">      <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="s2">&quot;/search_result&quot;</span> <span class="o">|</span> <span class="nf">relURL</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;q&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;search&quot;</span> <span class="na">class=</span><span class="s">&quot;search-input&quot;</span> <span class="cp">{{</span> <span class="k">with</span> <span class="nv">.Site.Params.search_placeholder</span> <span class="cp">}}</span><span class="na">placeholder=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="err">.</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span><span class="nt">&gt;</span>
+</span><span class="hll">        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">value=</span><span class="s">&quot;検索&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;search-button&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;/img/search.svg&quot;</span> <span class="na">alt=</span><span class="s">&quot;search&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+</span><span class="hll">      <span class="nt">&lt;/form&gt;</span>
+</span><span class="hll">    <span class="nt">&lt;/nav&gt;</span>
+</span><span class="hll">  <span class="nt">&lt;/div&gt;</span>
+</span>  <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;language&quot;</span><span class="nt">&gt;</span>
+  ...
+</pre></div>
+</td></tr></table>
+
+<h3 id="_9">検索アイコンの配置<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>次の画像を <code>search.svg</code> というファイル名で保存します（画像は<a href="flaticon.com/">Flaticon</a>より）</p>
+<p><img alt="ロゴ" src="../img/search.svg" style="width:50px;" /></p>
+</li>
+<li>
+<p><code>mytheme/static/</code> の下に <code>img</code> ディレクトリを作成し、その中に <code>search.svg</code> を置きます。</p>
+</li>
+</ol>
+<h3 id="css_1">css の修正<a class="headerlink" href="#css_1" title="Permanent link">&para;</a></h3>
+<p><code>mytheme/static/css/default.css</code> を開き、黄色の部分を追記します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">search-box</span> <span class="p">{</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="hll"><span class="p">.</span><span class="nc">search-box</span> <span class="nt">form</span> <span class="p">{</span>
+</span><span class="hll">  <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+</span><span class="hll"><span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll"><span class="p">.</span><span class="nc">search-input</span> <span class="p">{</span>
+</span><span class="hll">  <span class="k">width</span><span class="p">:</span> <span class="mi">250</span><span class="kt">px</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">height</span><span class="p">:</span> <span class="mi">35</span><span class="kt">px</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#ddd</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">border-top-left-radius</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">border-bottom-left-radius</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">padding-left</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+</span><span class="hll"><span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll"><span class="p">.</span><span class="nc">search-button</span> <span class="p">{</span>
+</span><span class="hll">  <span class="k">width</span><span class="p">:</span> <span class="mi">35</span><span class="kt">px</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">height</span><span class="p">:</span> <span class="mi">35</span><span class="kt">px</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#eee</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">border</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">border-top-right-radius</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">border-bottom-right-radius</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+</span><span class="hll"><span class="p">}</span>
+</span></pre></div>
+</td></tr></table>
+
+<h3 id="_10">設定ファイル<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>検索ボックスのプレースホルダーを設定ファイルで変更できるようにします。</p>
+<ol>
+<li><code>config.toml</code> を開きます。</li>
+<li>パラメータ <code>search_placeholder</code> パラメータを追加します。値には、画像のパスを指定します。<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">baseURL</span> <span class="o">=</span> <span class="s">&quot;http://example.org/&quot;</span>
+<span class="n">languageCode</span> <span class="o">=</span> <span class="s">&quot;en-us&quot;</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s">&quot;My New Hugo Site&quot;</span>
+<span class="n">theme</span> <span class="o">=</span> <span class="s">&quot;mytheme&quot;</span>
+
+<span class="k">[params]</span>
+<span class="n">logo</span> <span class="o">=</span> <span class="s">&quot;/img/logo.svg&quot;</span>
+<span class="hll"><span class="n">search_placeholder</span> <span class="o">=</span> <span class="s">&quot;検索キーワードを入力&quot;</span>
+</span></pre></div>
+</td></tr></table>
+
+</li>
+</ol>
+<h3 id="_11">検索結果ページ<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>検索ボックスで検索したときに表示する検索結果ページを作ります。</p>
+<h4 id="_12">テンプレート<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>mytheme/layouts/</code> の下に <code>search_result</code> ディレクトリを作成します。</li>
+<li>作成した <code>search_result</code> の下に、<code>single.html</code> を作成します。</li>
+<li>次の HTML を追記します。<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="nv">define</span> <span class="s2">&quot;main&quot;</span> <span class="cp">}}</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;article&gt;</span>
+    <span class="nt">&lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;/article&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>検索結果は独自のテンプレートを使いたいので、「<code>search_result</code>」という個別タイプのテンプレートを作ります（参照：<a href="../2_theme/04_kind-template.md#_6">シングルページテンプレート</a>）</p>
+</div>
+<h3 id="_13">検索結果ページファイル<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>ページの実体を作ります。</p>
+<ol>
+<li><code>content</code> 以下に <code>search_result.md</code> を作成します。</li>
+<li><code>search_result.md</code> を開き、次の内容に修正します。<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nn">---</span>
+<span class="nt">title</span><span class="p">:</span> <span class="s">&quot;検索結果&quot;</span>
+<span class="nt">type</span><span class="p">:</span> <span class="s">&quot;search_result&quot;</span>
+<span class="nn">---</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+</ol>
+<h3 id="_14">動作確認<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>開発サーバを起動して、検索を試してみましょう。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># /Hugo/Sites/theme_tutorial 内</span>
+$ hugo server
+
+<span class="c1"># http://localhost:1313/ にアクセスして確認</span>
+</pre></div>
+</td></tr></table>
+
+<p><img alt="ホームページ" src="../img/04_header_search.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../03_css/" class="btn btn-neutral" title="CSS を適用する"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../03_css/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
