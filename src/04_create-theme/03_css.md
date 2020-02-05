@@ -25,6 +25,7 @@ CSS ファイルは すでに `mytheme/layouts/partials/head.html` で読み込�
     .header {
       height: 75px;
       margin: 0 auto;
+      padding: 0 16px;
       border-bottom: 1px solid #ddd;
       display: flex;
       justify-content: space-between;
@@ -33,6 +34,10 @@ CSS ファイルは すでに `mytheme/layouts/partials/head.html` で読み込�
 
     .search-box {
       width: 300px;
+    }
+
+    .main {
+      padding: 16px;
     }
 
     .home {
@@ -60,6 +65,7 @@ CSS ファイルは すでに `mytheme/layouts/partials/head.html` で読み込�
     .footer {
       height: 75px;
       margin: 0 auto;
+      padding: 0 16px;
       border-top: 1px solid #ddd;
       display: flex;
       justify-content: space-between;

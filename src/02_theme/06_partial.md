@@ -30,7 +30,7 @@ HUGO ではこれらの部品化したテンプレートのことを「[**パー
         <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
       </head>
       <body>
-        <main id="main">
+        <main class="main">
           トップページだよ
         </main>
         <footer>copyright © {{ .Site.Copyright }}</footer> <!-- ここはフッター -->
@@ -64,7 +64,7 @@ HUGO ではこれらの部品化したテンプレートのことを「[**パー
             <header>
             {{ partial "header.html" . }}
             </header>
-            <main id="main">
+            <main class="main">
               トップページだよ
             </main>
             <footer>
@@ -117,7 +117,7 @@ HUGO ではこれらの部品化したテンプレートのことを「[**パー
             <header>
             {{ partial "header.html" . }}
             </header>
-            <main id="main">
+            <main class="main">
             {{ block "main" . }} {{ end }}
             </main>
             <footer>
@@ -127,7 +127,6 @@ HUGO ではこれらの部品化したテンプレートのことを「[**パー
         </html>
 
 `{{ define "定義名" }} ... {{ end }}` で定義した内容を呼び出すには、`{{ block "定義名" . }} {{ end }}` として記述します。
-
 
 ## 動作確認
 

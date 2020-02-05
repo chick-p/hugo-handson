@@ -55,23 +55,20 @@
     `[params]` セクション追加した設定値は `Site.Params.変数名` で呼び出しできます。
 
 ### css の修正
-ロゴの色が薄いので、フッター部分に背景色をつけます。ロゴも左寄せになっているので、余白を追加します。
+ロゴの色が薄いので、フッター部分に背景色をつけます。
 
 `mytheme/static/css/default.css` を開き、黄色の部分を追記します。
 
-    :::css hl_lines="8 11 12 13"
+    :::css hl_lines="9"
     .header {
       height: 75px;
       margin: 0 auto;
+      padding: 0 16px;
       border-bottom: 1px solid #ddd;
       display: flex;
       justify-content: space-between;
       align-items: center;
       background-color: #6c5b7b;
-    }
-
-    .header-logo {
-      margin-left: 10px;
     }
 
 ### 動作確認
