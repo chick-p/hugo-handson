@@ -38,7 +38,7 @@
 
 ### テンプレートの修正
 
-`themes/mytheme/layouts/partials/header.html` を開いて、黄色の部分を追加します（一部抜粋）。
+`themes/mytheme/layouts/partials/header.html` を開いて、黄色の部分を追加します。
 
     :::hugo hl_lines="3 4 5 6"
     <div class="header">
