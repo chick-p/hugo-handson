@@ -177,6 +177,10 @@
 
     </ul>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../05_mult-language/">サイトを多言語化する</a>
+                </li>
     </ul>
 	    </li>
           
@@ -255,11 +259,11 @@
 <p><img alt="ロゴ" src="../img/logo.svg" style="width:100px;" /></p>
 </li>
 <li>
-<p><code>mytheme/static/</code> の下に <code>img</code> ディレクトリを作成し、その中に <code>logo.svg</code> を置きます。</p>
+<p><code>themes/mytheme/static/</code> の下に <code>img</code> ディレクトリを作成し、その中に <code>logo.svg</code> を置きます。</p>
 </li>
 </ol>
 <h3 id="_5">テンプレートの修正<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><code>mytheme/layouts/partials/header.html</code> を開いて、黄色の部分を追加します（一部抜粋）。</p>
+<p><code>themes/mytheme/layouts/partials/header.html</code> を開いて、黄色の部分を追加します。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -286,7 +290,7 @@
 </div>
 <h3 id="css">css の修正<a class="headerlink" href="#css" title="Permanent link">&para;</a></h3>
 <p>ロゴの色が薄いので、フッター部分に背景色をつけます。</p>
-<p><code>mytheme/static/css/default.css</code> を開き、黄色の部分を追記します。</p>
+<p><code>themes/mytheme/static/css/default.css</code> を開き、黄色の部分を追記します。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -326,7 +330,7 @@ $ hugo server
 <h2 id="_7">検索ボックスの追加<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>検索フォームを追加します。</p>
 <h3 id="_8">テンプレートの修正<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p><code>mytheme/layouts/partials/header.html</code> を開いて、黄色の部分を追加します。</p>
+<p><code>themes/mytheme/layouts/partials/header.html</code> を開いて、黄色の部分を追加します。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -362,11 +366,11 @@ $ hugo server
 <p><img alt="ロゴ" src="../img/search.svg" style="width:50px;" /></p>
 </li>
 <li>
-<p><code>mytheme/static/</code> の下に <code>img</code> ディレクトリを作成し、その中に <code>search.svg</code> を置きます。</p>
+<p><code>themes/mytheme/static/</code> の下に <code>img</code> ディレクトリを作成し、その中に <code>search.svg</code> を置きます。</p>
 </li>
 </ol>
 <h3 id="css_1">css の修正<a class="headerlink" href="#css_1" title="Permanent link">&para;</a></h3>
-<p><code>mytheme/static/css/default.css</code> を開き、黄色の部分を追記します。</p>
+<p><code>themes/mytheme/static/css/default.css</code> を開き、黄色の部分を追記します。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -449,7 +453,7 @@ $ hugo server
 <p>検索ボックスで検索したときに表示する検索結果ページを作ります。</p>
 <h4 id="_12">テンプレート<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <ol>
-<li><code>mytheme/layouts/</code> の下に <code>search_result</code> ディレクトリを作成します。</li>
+<li><code>themes/mytheme/layouts/</code> の下に <code>search_result</code> ディレクトリを作成します。</li>
 <li>作成した <code>search_result</code> の下に、<code>single.html</code> を作成します。</li>
 <li>次の HTML を追記します。<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -509,6 +513,8 @@ $ hugo server
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../05_mult-language/" class="btn btn-neutral float-right" title="サイトを多言語化する">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
       
         <a href="../03_css/" class="btn btn-neutral" title="CSS を適用する"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
@@ -538,6 +544,8 @@ $ hugo server
       
         <span><a href="../03_css/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../05_mult-language/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

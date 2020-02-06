@@ -191,6 +191,10 @@
                     
     <a class="" href="../04_header/">ヘッダーを作成する</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../05_mult-language/">サイトを多言語化する</a>
+                </li>
     </ul>
 	    </li>
           
@@ -234,7 +238,7 @@
 <p>サイト全体のベース部分と、ヘッダー・フッター、各テンプレートの大枠部分を作成していきましょう。</p>
 <hr />
 <h2 id="_2">ベーステンプレート<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p><code>mytheme/layouts/_default/baseof.html</code> を開いて、以下に書き換えます。</p>
+<p><code>themes/mytheme/layouts/_default/baseof.html</code> を開いて、以下に書き換えます。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -276,7 +280,7 @@
 <li>ページの種類によって中央部分の内容は異なるので、各ページテンプレートで定義した <code>main</code>（<a href="../../03_hugo-template-syntax/02_base2/#_14">部分テンプレート定義</a>）を呼び出します。</li>
 </ul>
 <h2 id="ltheadgt"><code>&lt;head&gt;</code> の部分テンプレート<a class="headerlink" href="#ltheadgt" title="Permanent link">&para;</a></h2>
-<p><code>mytheme/layouts/partials/head.html</code> を開いて、以下に書き換えます。</p>
+<p><code>themes/mytheme/layouts/partials/head.html</code> を開いて、以下に書き換えます。</p>
 <p><code>&lt;head&gt;</code> 内では、HTML のメタ情報や <code>css</code> などの読み込みを行います。読み込んでいる css ファイルについてはあとで作成します。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -289,7 +293,7 @@
 </td></tr></table>
 
 <h2 id="_3">ヘッダーの部分テンプレート<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p><code>mytheme/layouts/partials/header.html</code> を開いて、以下に書き換えます。</p>
+<p><code>themes/mytheme/layouts/partials/header.html</code> を開いて、以下に書き換えます。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -325,7 +329,7 @@
 </td></tr></table>
 
 <h2 id="_4">フッターの部分テンプレート<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p><code>mytheme/layouts/partials/footer.html</code> を開いて、以下に書き換えます。</p>
+<p><code>themes/mytheme/layouts/partials/footer.html</code> を開いて、以下に書き換えます。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -345,7 +349,7 @@
 </td></tr></table>
 
 <h2 id="_5">ホームページのテンプレート<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p><code>mytheme/layouts/index.html</code> を開いて、以下に書き換えます。</p>
+<p><code>themes/mytheme/layouts/index.html</code> を開いて、以下に書き換えます。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -359,7 +363,7 @@
 </td></tr></table>
 
 <h2 id="_6">リストページのテンプレート<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p><code>mytheme/layouts/_default/list.html</code> を開いて、以下に書き換えます。</p>
+<p><code>themes/mytheme/layouts/_default/list.html</code> を開いて、以下に書き換えます。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -377,7 +381,7 @@
 </td></tr></table>
 
 <h2 id="_7">シングルページのテンプレート<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p><code>mytheme/layouts/_default/single.html</code> を開いて、以下に書き換えます。</p>
+<p><code>themes/mytheme/layouts/_default/single.html</code> を開いて、以下に書き換えます。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -399,7 +403,7 @@
 </td></tr></table>
 
 <h2 id="_8">カテゴリーツリーの部分テンプレート<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p><code>mytheme/layouts/partials/nav.html</code> を開いて、以下に書き換えます。</p>
+<p><code>themes/mytheme/layouts/partials/nav.html</code> を開いて、以下に書き換えます。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;nav&quot;</span><span class="nt">&gt;</span>

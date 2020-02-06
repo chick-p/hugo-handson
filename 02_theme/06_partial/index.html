@@ -179,6 +179,10 @@
                     
     <a class="" href="../../04_create-theme/04_header/">ヘッダーを作成する</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../../04_create-theme/05_mult-language/">サイトを多言語化する</a>
+                </li>
     </ul>
 	    </li>
           
@@ -267,21 +271,21 @@ HUGO ではこれらの部品化したテンプレートのことを「<a href="
 <p>パーシャルテンプレートのファイルは「layouts/partials」以下に配置します。ファイル名は任意でつけることができます。</p>
 <ul>
 <li>
-<p><code>mytheme/layouts/partials/header.html</code> を開いて、以下を記述します。</p>
+<p><code>themes/mytheme/layouts/partials/header.html</code> を開いて、以下を記述します。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">.Site.Title</span> <span class="cp">}}</span><span class="nt">&lt;/h1&gt;</span>
 </pre></div>
 </td></tr></table>
 
 </li>
 <li>
-<p><code>mytheme/layouts/partials/footer.html</code> を開いて、以下を記述します。</p>
+<p><code>themes/mytheme/layouts/partials/footer.html</code> を開いて、以下を記述します。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="nv">.Site.Copyright</span> <span class="cp">}}</span><span class="x"></span>
 </pre></div>
 </td></tr></table>
 
 </li>
 <li>
-<p><code>mytheme/layouts/index.html</code> を開いて、以下を記述します。</p>
+<p><code>themes/mytheme/layouts/index.html</code> を開いて、以下を記述します。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -334,7 +338,7 @@ HUGO ではこれらの部品化したテンプレートのことを「<a href="
 <h3 id="_7">部品化してみる<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p><code>mytheme/layouts/index.html</code> を開いて、以下のように修正します。</p>
+<p><code>themes/mytheme/layouts/index.html</code> を開いて、以下のように修正します。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="nv">define</span> <span class="s2">&quot;main&quot;</span> <span class="cp">}}</span><span class="x"></span>
@@ -345,7 +349,7 @@ HUGO ではこれらの部品化したテンプレートのことを「<a href="
 
 </li>
 <li>
-<p><code>mytheme/layouts/_default/single.html</code> を開いて、以下を記述します。</p>
+<p><code>themes/mytheme/layouts/_default/single.html</code> を開いて、以下を記述します。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -358,7 +362,7 @@ HUGO ではこれらの部品化したテンプレートのことを「<a href="
 
 </li>
 <li>
-<p><code>mytheme/layouts/_default/baseof.html</code> を開いて、以下のように修正します。</p>
+<p><code>themes/mytheme/layouts/_default/baseof.html</code> を開いて、以下のように修正します。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
