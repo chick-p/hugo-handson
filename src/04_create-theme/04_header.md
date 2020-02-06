@@ -34,11 +34,11 @@
 
     ![ロゴ](./img/logo.svg){: style="width:100px;"}
 
-1. `mytheme/static/` の下に `img` ディレクトリを作成し、その中に `logo.svg` を置きます。
+1. `themes/mytheme/static/` の下に `img` ディレクトリを作成し、その中に `logo.svg` を置きます。
 
 ### テンプレートの修正
 
-`mytheme/layouts/partials/header.html` を開いて、黄色の部分を追加します（一部抜粋）。
+`themes/mytheme/layouts/partials/header.html` を開いて、黄色の部分を追加します（一部抜粋）。
 
     :::hugo hl_lines="3 4 5 6"
     <div class="header">
@@ -57,7 +57,7 @@
 ### css の修正
 ロゴの色が薄いので、フッター部分に背景色をつけます。
 
-`mytheme/static/css/default.css` を開き、黄色の部分を追記します。
+`themes/mytheme/static/css/default.css` を開き、黄色の部分を追記します。
 
     :::css hl_lines="9"
     .header {
@@ -91,7 +91,7 @@
 
 ### テンプレートの修正
 
-`mytheme/layouts/partials/header.html` を開いて、黄色の部分を追加します。
+`themes/mytheme/layouts/partials/header.html` を開いて、黄色の部分を追加します。
 
     :::hugo hl_lines="3 4 5 6 7 8 9 10 11"
       ...
@@ -114,11 +114,11 @@
 
     ![ロゴ](./img/search.svg){: style="width:50px;"}
 
-1. `mytheme/static/` の下に `img` ディレクトリを作成し、その中に `search.svg` を置きます。
+1. `themes/mytheme/static/` の下に `img` ディレクトリを作成し、その中に `search.svg` を置きます。
 
 ### css の修正
 
-`mytheme/static/css/default.css` を開き、黄色の部分を追記します。
+`themes/mytheme/static/css/default.css` を開き、黄色の部分を追記します。
 
     :::css hl_lines="5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26"
     .search-box {
@@ -171,7 +171,7 @@
 
 #### テンプレート
 
-1. `mytheme/layouts/` の下に `search_result` ディレクトリを作成します。
+1. `themes/mytheme/layouts/` の下に `search_result` ディレクトリを作成します。
 1. 作成した `search_result` の下に、`single.html` を作成します。
 1. 次の HTML を追記します。
 

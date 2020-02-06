@@ -2,7 +2,7 @@
 
 CSS を適用してみましょう。
 
-CSS ファイルは すでに `mytheme/layouts/partials/head.html` で読み込まれるように設定しているので、ファイルを置きます。
+CSS ファイルは すでに `themes/mytheme/layouts/partials/head.html` で読み込まれるように設定しているので、ファイルを置きます。
 静的ファイルは、`テーマ名/static/` の下に置くことで読み込まれます。
 
 ---
@@ -15,7 +15,7 @@ CSS ファイルは すでに `mytheme/layouts/partials/head.html` で読み込�
 1. [https://code.google.com/archive/p/html5resetcss/downloads](https://code.google.com/archive/p/html5resetcss/downloads
 ) から `html5reset-1.6.1.css` をダウンロードします。
 2. ダウンロードしたファイルを `reset.css` に変更します。
-3. `mytheme/static/css` の下に置きます。
+3. `themes/mytheme/static/css` の下に置きます。
 
 ## `default.css`
 

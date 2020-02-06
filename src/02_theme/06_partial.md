@@ -39,18 +39,18 @@ HUGO ではこれらの部品化したテンプレートのことを「[**パー
 
 パーシャルテンプレートのファイルは「layouts/partials」以下に配置します。ファイル名は任意でつけることができます。
 
-* `mytheme/layouts/partials/header.html` を開いて、以下を記述します。
+* `themes/mytheme/layouts/partials/header.html` を開いて、以下を記述します。
 
         :::hugo
         <h1>{{ .Site.Title }}</h1>
 
-* `mytheme/layouts/partials/footer.html` を開いて、以下を記述します。
+* `themes/mytheme/layouts/partials/footer.html` を開いて、以下を記述します。
 
         :::hugo
         {{ .Site.Copyright }}
 
 
-* `mytheme/layouts/index.html` を開いて、以下を記述します。
+* `themes/mytheme/layouts/index.html` を開いて、以下を記述します。
 
         :::hugo hl_lines="10 16"
         <!DOCTYPE html>
@@ -88,14 +88,14 @@ HUGO ではこれらの部品化したテンプレートのことを「[**パー
 
 ### 部品化してみる
 
-* `mytheme/layouts/index.html` を開いて、以下のように修正します。
+* `themes/mytheme/layouts/index.html` を開いて、以下のように修正します。
 
         :::hugo
         {{ define "main" }}
           トップページだよ
         {{ end }}
 
-* `mytheme/layouts/_default/single.html` を開いて、以下を記述します。
+* `themes/mytheme/layouts/_default/single.html` を開いて、以下を記述します。
 
         :::hugo
         {{ define "main" }}
@@ -103,7 +103,7 @@ HUGO ではこれらの部品化したテンプレートのことを「[**パー
           {{ .Content }}
         {{ end }}
 
-* `mytheme/layouts/_default/baseof.html` を開いて、以下のように修正します。
+* `themes/mytheme/layouts/_default/baseof.html` を開いて、以下のように修正します。
 
         :::hugo hl_lines="13"
         <!DOCTYPE html>

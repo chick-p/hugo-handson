@@ -98,7 +98,7 @@
 ## トップページに一覧を表示
 トップページに記事一覧を表示してみましょう。
 
-1. `mytheme/layouts/index.html` をエディタで開きます。
+1. `themes/mytheme/layouts/index.html` をエディタで開きます。
 2. [トップのテンプレート作成](02_create-quick-theme.md#トップのテンプレート作成) で編集した内容に、以下の`<ul>〜</ul>`部分を追記します。
 
         :::hugo hl_lines="2 3 4 5 6"

@@ -6,7 +6,7 @@
 
 ## ベーステンプレート
 
-`mytheme/layouts/_default/baseof.html` を開いて、以下に書き換えます。
+`themes/mytheme/layouts/_default/baseof.html` を開いて、以下に書き換えます。
 
     :::hugo
     <!DOCTYPE html>
@@ -32,7 +32,7 @@
 
 ## `<head>` の部分テンプレート
 
-`mytheme/layouts/partials/head.html` を開いて、以下に書き換えます。
+`themes/mytheme/layouts/partials/head.html` を開いて、以下に書き換えます。
 
 `<head>` 内では、HTML のメタ情報や `css` などの読み込みを行います。読み込んでいる css ファイルについてはあとで作成します。
 
@@ -44,7 +44,7 @@
 
 ## ヘッダーの部分テンプレート
 
-`mytheme/layouts/partials/header.html` を開いて、以下に書き換えます。
+`themes/mytheme/layouts/partials/header.html` を開いて、以下に書き換えます。
 
     :::hugo
     <div class="header">
@@ -66,7 +66,7 @@
 
 ## フッターの部分テンプレート
 
-`mytheme/layouts/partials/footer.html` を開いて、以下に書き換えます。
+`themes/mytheme/layouts/partials/footer.html` を開いて、以下に書き換えます。
 
     :::hugo
     <div class="footer">
@@ -80,7 +80,7 @@
 
 ## ホームページのテンプレート
 
-`mytheme/layouts/index.html` を開いて、以下に書き換えます。
+`themes/mytheme/layouts/index.html` を開いて、以下に書き換えます。
 
     :::hugo
     {{ define "main" }}
@@ -91,7 +91,7 @@
 
 ## リストページのテンプレート
 
-`mytheme/layouts/_default/list.html` を開いて、以下に書き換えます。
+`themes/mytheme/layouts/_default/list.html` を開いて、以下に書き換えます。
 
     :::hugo
     {{ define "main" }}
@@ -104,7 +104,7 @@
 
 ## シングルページのテンプレート
 
-`mytheme/layouts/_default/single.html` を開いて、以下に書き換えます。
+`themes/mytheme/layouts/_default/single.html` を開いて、以下に書き換えます。
 
     :::hugo
     {{ define "main" }}
@@ -119,7 +119,7 @@
 
 ## カテゴリーツリーの部分テンプレート
 
-`mytheme/layouts/partials/nav.html` を開いて、以下に書き換えます。
+`themes/mytheme/layouts/partials/nav.html` を開いて、以下に書き換えます。
 
     :::hugo
     <nav class="nav">
