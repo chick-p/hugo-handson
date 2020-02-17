@@ -7,7 +7,7 @@
 ## パーシャルテンプレート
 
 ### 概要
-サイトにおいて、各ページで共通する部品があることがあります。
+サイトにおいて、各ページで共通する部品が存在することがあります。
 
 - ヘッダー
 - フッター
@@ -24,16 +24,21 @@ HUGO ではこれらの部品化したテンプレートのことを「[**パー
     :::html
     <!DOCTYPE html>
     <html lang="{{ .Site.LanguageCode }}">
-      <head> <!-- ここはヘッダー -->
+      <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/css/main.css">
         <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
       </head>
       <body>
+        <header> <!-- ここはヘッダー -->
+          <h1>{{ .Site.Title }}</h1><
+        /header>
         <main class="main">
           トップページだよ
         </main>
-        <footer>copyright © {{ .Site.Copyright }}</footer> <!-- ここはフッター -->
+        <footer>
+          copyright © {{ .Site.Copyright }}
+        </footer> <!-- ここはフッター -->
       </body>
     </html>
 
