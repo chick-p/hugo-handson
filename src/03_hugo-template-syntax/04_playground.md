@@ -6,14 +6,14 @@
 
 前のページや次のページがあれば、そのページへのリンクを表示します。
 
-■に当てはまる変数・関数を [HUGO ドキュメント](https://gohugo.io/documentation/)から探してみましょう。
+(*)に当てはまる変数・関数を [HUGO ドキュメント](https://gohugo.io/documentation/)から探してみましょう。
 
     :::hugo
-    {{ ■ .PrevInSection }}
-      <a href="{{ ■ }}">＜ 前のページへ</a>
+    {{ (*) .PrevInSection }}
+      <a href="{{ (*) }}">＜ 前のページへ</a>
     {{ end }}
-    {{ ■ .NextInSection }}
-      <a href="{{ ■ }}">次のページへ ＞</a>
+    {{ (*) .NextInSection }}
+      <a href="{{ (*) }}">次のページへ ＞</a>
     {{ end }}
 
 ??? "解答"
@@ -22,8 +22,9 @@
         {{ with .PrevInSection }}
           <a href="{{ .RelPermalink }}">＜ 前のページへ</a>
         {{ end }}
-        {{ with .NextInSection }}
-          <a href="{{ .RelPermalink }}"></a>次のページへ ＞</a>
+        {{ with .NextInSection }}
+          <a href="{{ .RelPermalink }}">次のページへ ＞</a>
+        {{ end }}
 
     !!! Note
         - 「...があれば」なので `with` を使います。
@@ -34,31 +35,37 @@
 ## セクション内のページ一覧を表示する
 
 表示しているページ以下にあるセクション（カテゴリ）の記事ページの一覧を表示します。
+ページ一覧は、`list.html`（セクションページで一覧を作るときに使うページ）に記載します。
 
-■に当てはまる変数・関数を [HUGO ドキュメント](https://gohugo.io/documentation/)から探してみましょう。
+(*)に当てはまる変数・関数を [HUGO ドキュメント](https://gohugo.io/documentation/)から探してみましょう。
 
     :::hugo
+    {{ define "main" }}
     <h3>このカテゴリー以下の記事一覧</h3>
     <ul>
-      {{ ■ ■ }}
+      {{ (*) (*) }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
       {{ end }}
     </ul>
+    {{ end }}
 
 ??? "解答"
 
         :::hugo
+        {{ define "main" }}
         <h3>このカテゴリー以下の記事一覧</h3>
         <ul>
           {{ range .Pages }}
             <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
           {{ end }}
         </ul>
+        {{ end }}
 
 
     !!! Note
         - 記事一覧は `.Pages` で取得できます。
         - リストなので `range` で回します。
+        - `.Pages` は Single Page でも使える変数になっていますが実際には利用できません（空配列が返ります）。
 
 
     !!! Note
@@ -83,12 +90,12 @@
 ## 同一セクションのページ一覧を表示する
 表示しているページと同一セクション内のページ一覧を表示します。
 
-■に当てはまる変数・関数を [HUGO ドキュメント](https://gohugo.io/documentation/)から探してみましょう。
+(*)に当てはまる変数・関数を [HUGO ドキュメント](https://gohugo.io/documentation/)から探してみましょう。
 
     :::hugo
     <h3>このカテゴリーの記事一覧</h3>
     <ul>
-      {{ ■ ■ }}
+      {{ (*) (*) }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
       {{ end }}
     </ul>
@@ -112,12 +119,12 @@
 
 サイト内の記事を作成日 (frontmatter の `date` の値) 順に表示してみましょう。
 
-■に当てはまる変数・関数を [HUGO ドキュメント](https://gohugo.io/documentation/)から探してみましょう。
+(*)に当てはまる変数・関数を [HUGO ドキュメント](https://gohugo.io/documentation/)から探してみましょう。
 
     :::hugo
     <h2>新着記事</h2>
     <ul>
-      {{ range first 5 .Site.RegularPages.■.Reverse }}
+      {{ range first 5 .Site.RegularPages.(*).Reverse }}
         <li>
           <b><a href="{{ .RelPermalink }}">{{ .Title }}</a></b>
           <time>{{ .Date.Format "2006-01-02" }}</time>
@@ -154,11 +161,11 @@
 
 記事内の見出しを使って目次を出力します。
 
-■に当てはまる変数・関数を [HUGO ドキュメント](https://gohugo.io/documentation/)から探してみましょう。
+(*)に当てはまる変数・関数を [HUGO ドキュメント](https://gohugo.io/documentation/)から探してみましょう。
 
     :::hugo
     <h2>目次</h2>
-    {{ ■ }}
+    {{ (*) }}
 
 ??? "解答"
 
