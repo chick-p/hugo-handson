@@ -461,10 +461,12 @@ $ hugo server
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="nv">define</span> <span class="s2">&quot;main&quot;</span> <span class="cp">}}</span>
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="nv">define</span> <span class="s2">&quot;main&quot;</span> <span class="cp">}}</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;article&gt;</span>
     <span class="nt">&lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/h1&gt;</span>
+    <span class="cp">{{</span> <span class="nv">.Content</span> <span class="cp">}}</span>
   <span class="nt">&lt;/article&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
@@ -494,7 +496,8 @@ $ hugo server
 </li>
 </ol>
 <h3 id="_14">動作確認<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
-<p>開発サーバを起動して、検索を試してみましょう。</p>
+<p>開発サーバを起動して、検索を試してみましょう。検索ページが表示されたら完成です。
+（実際の検索機能は実装していないので、検索はできません）。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -504,8 +507,6 @@ $ hugo server
 <span class="c1"># http://localhost:1313/ にアクセスして確認</span>
 </pre></div>
 </td></tr></table>
-
-<p><img alt="ホームページ" src="../img/04_header_search.png" /></p>
               
             </div>
           </div>

@@ -414,15 +414,31 @@ $ hugo server
  7
  8
  9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>...
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>...
+    <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;search-box&quot;</span><span class="nt">&gt;</span>
+<span class="hll">      <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="s2">&quot;/search_result&quot;</span> <span class="o">|</span> <span class="nf">relLangURL</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>
+</span>        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;q&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;search&quot;</span> <span class="na">class=</span><span class="s">&quot;search-input&quot;</span> <span class="cp">{{</span> <span class="k">with</span> <span class="nv">.Site.Params.search_placeholder</span> <span class="cp">}}</span><span class="na">placeholder=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="err">.</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">value=</span><span class="s">&quot;検索&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;search-button&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;/img/search.svg&quot;</span> <span class="na">alt=</span><span class="s">&quot;search&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/nav&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;language&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">&quot;language&quot;</span> <span class="na">onChange=</span><span class="s">&quot;location.href=value;&quot;</span><span class="nt">&gt;</span>
-<span class="hll">      <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="err">selected</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Site.Language.LanguageName</span> <span class="cp">}}</span><span class="nt">&lt;/option&gt;</span>
+<span class="hll">    <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">&quot;language&quot;</span> <span class="na">onChange=</span><span class="s">&quot;location.href=value;&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">      <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="err">selected</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Site.Language.LanguageName</span> <span class="cp">}}</span><span class="nt">&lt;/option&gt;</span>
 </span><span class="hll">      <span class="cp">{{</span><span class="o">-</span> <span class="nv">range</span> <span class="nv">.Translations</span> -<span class="cp">}}</span>
 </span><span class="hll">        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Site.Language.LanguageName</span> <span class="cp">}}</span><span class="nt">&lt;/option&gt;</span>
 </span><span class="hll">      <span class="cp">{{</span><span class="o">-</span> <span class="nv">end</span> -<span class="cp">}}</span>
-</span>    <span class="nt">&lt;/select&gt;</span>
-  <span class="nt">&lt;/nav&gt;</span>
+</span><span class="hll">    <span class="nt">&lt;/select&gt;</span>
+</span>  <span class="nt">&lt;/nav&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
 </td></tr></table>
@@ -430,6 +446,7 @@ $ hugo server
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
+<li><code>relLangURL</code> でディレクトリパスの言語コードを加味した URL を利用できます。</li>
 <li><code>.Site.Language.LanguageName</code> は現在表示している言語の表示名です。表示名には、<code>config.toml</code> の <code>[language.言語コード]</code> の <code>LanguageName</code> で指定した値が使われています。</li>
 <li><code>.Translations</code> で現在表示している言語以外で、<code>config.toml</code> にある言語設定の一覧を取得します。<ul>
 <li><code>.RelPermalink</code> は、ループで取り出した言語のコンテンツのパスです。</li>
