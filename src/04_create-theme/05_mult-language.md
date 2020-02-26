@@ -125,8 +125,16 @@ HUGO には[Multilingual Mode](https://gohugo.io/content-management/multilingual
 
 `themes/mytheme/layouts/partials/header.html` を開いて、黄色の部分を修正します。
 
-    :::hugo hl_lines="4 5 6 7"
+    :::hugo hl_lines="3 11 12 13 14 15 16"
     ...
+        <nav class="search-box">
+          <form action="{{ "/search_result" | relLangURL }}">
+            <input type="text" name="q" aria-label="search" class="search-input" {{ with .Site.Params.search_placeholder }}placeholder="{{ . }}"{{ end }}>
+            <input type="hidden" value="検索">
+            <button type="submit" class="search-button"><img src="/img/search.svg" alt="search"></button>
+          </form>
+        </nav>
+      </div>
       <nav class="language">
         <select name="language" onChange="location.href=value;">
           <option value="" selected>{{ .Site.Language.LanguageName }}</option>
@@ -138,6 +146,7 @@ HUGO には[Multilingual Mode](https://gohugo.io/content-management/multilingual
     </div>
 
 !!! Note
+    - `relLangURL` でディレクトリパスの言語コードを加味した URL を利用できます。
     - `.Site.Language.LanguageName` は現在表示している言語の表示名です。表示名には、`config.toml` の `[language.言語コード]` の `LanguageName` で指定した値が使われています。
     - `.Translations` で現在表示している言語以外で、`config.toml` にある言語設定の一覧を取得します。
         - `.RelPermalink` は、ループで取り出した言語のコンテンツのパスです。

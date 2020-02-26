@@ -180,6 +180,7 @@
         <div class="content">
           <article>
             <h1>{{ .Title }}</h1>
+            {{ .Content }}
           </article>
         </div>
         {{ end }}
@@ -202,12 +203,11 @@
 
 ### 動作確認
 
-開発サーバを起動して、検索を試してみましょう。
+開発サーバを起動して、検索を試してみましょう。検索ページが表示されたら完成です。
+（実際の検索機能は実装していないので、検索はできません）。
 
     :::bash
     # /Hugo/Sites/theme_tutorial 内
     $ hugo server
 
     # http://localhost:1313/ にアクセスして確認
-
-![ホームページ](img/04_header_search.png)
