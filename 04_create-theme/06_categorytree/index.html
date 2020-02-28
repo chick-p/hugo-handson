@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>カテゴリツリーの作成 - HUGO</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u30ab\u30c6\u30b4\u30ea\u30c4\u30ea\u30fc\u306e\u4f5c\u6210";
+    var mkdocs_page_input_path = "04_create-theme/06_categorytree.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/toml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HUGO</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">事前準備</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/00_hugo/">HUGO の開発環境の構築</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/01_vscode/">VSCode のインストールと設定</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/02_git/">Gitのインストールと設定</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">サイトと記事作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/00_add-site/">HUGO でサイトを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/01_add-article/">コンテンツ（記事）を作成する</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">テーマの作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../02_theme/01_create-site/">サンプルサイトとその構成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/02_create-quick-theme/">テーマテンプレートを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/04_kind-template/">ページの種類を学ぶ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/05_theme-directory/">テーマテンプレートの構成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/06_partial/">テンプレートを部品化する</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">HUGO テンプレートシンタックス</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../03_hugo-template-syntax/01_base/">シンタックスの基本</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../03_hugo-template-syntax/02_base2/">変数・カスタム変数・トリム・関数・部分テンプレート定義</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../03_hugo-template-syntax/03_base3/">条件分岐</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../03_hugo-template-syntax/04_playground/">HUGO の関数・変数を使って、サイトあるあるを作ってみる</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">ドキュメントサイトのテンプレート作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../01_abstract/">ドキュメントサイトのテンプレートを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../02_template-base/">ベース部分を作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../03_css/">CSS を適用する</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../04_header/">ヘッダーを作成する</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../05_mult-language/">サイトを多言語化する</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">カテゴリツリーの作成</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">カテゴリツリーの作成</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">カテゴリーツリーの作成</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HUGO</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>ドキュメントサイトのテンプレート作成 &raquo;</li>
+        
+      
+    
+    <li>カテゴリツリーの作成</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">カテゴリツリーの作成<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>カテゴリーツリーを作成します。</p>
+<hr />
+<h2 id="_2">カテゴリーツリーの作成<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>カテゴリーツリーには、現在開いているページ以下に所属する記事ページを表示します。</p>
+<h3 id="_3">テンプレートの修正<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><code>themes/mytheme/layouts/partials/nav.html</code> を開いて、以下に書き換えます。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;nav&quot;</span><span class="nt">&gt;</span>
+  <span class="cp">{{</span> <span class="nv">template</span> <span class="s2">&quot;navtree&quot;</span> <span class="o">(</span><span class="nv">dict</span> <span class="s2">&quot;section&quot;</span> <span class="nv">.Site.Home</span> <span class="s2">&quot;current&quot;</span> <span class="err">.</span><span class="o">)</span> <span class="cp">}}</span>
+  <span class="cp">{{</span> <span class="nv">define</span> <span class="s2">&quot;navtree&quot;</span> <span class="cp">}}</span>
+    <span class="cp">{{</span> <span class="err">$</span><span class="nv">section</span> <span class="o">:=</span> <span class="nv">.section</span> <span class="cp">}}</span> <span class="cp">{{</span><span class="o">/*</span> <span class="err">処理するセクション</span> <span class="o">*/</span><span class="cp">}}</span>
+    <span class="cp">{{</span> <span class="err">$</span><span class="nv">current</span> <span class="o">:=</span> <span class="nv">.current</span> <span class="cp">}}</span> <span class="cp">{{</span><span class="o">/*</span> <span class="err">現在表示中のページ</span> <span class="o">*/</span><span class="cp">}}</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="cp">{{</span> <span class="nv">range</span> <span class="err">$</span><span class="nv">section.Sections</span> <span class="cp">}}</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
+          <span class="cp">{{</span> <span class="k">if</span> <span class="nv">.RegularPages</span> <span class="cp">}}</span>
+          <span class="nt">&lt;ul&gt;</span>
+            <span class="cp">{{</span> <span class="nv">range</span> <span class="nv">.RegularPages</span><span class="cp">}}</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+          <span class="nt">&lt;/ul&gt;</span>
+          <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+          <span class="cp">{{</span> <span class="nv">template</span> <span class="s2">&quot;navtree&quot;</span> <span class="o">(</span><span class="nv">dict</span> <span class="s2">&quot;section&quot;</span> <span class="err">.</span> <span class="s2">&quot;current&quot;</span> <span class="err">$</span><span class="nv">current</span><span class="o">)</span> <span class="cp">}}</span>
+      <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+<span class="nt">&lt;/nav&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>
+<p><code>dict</code> はキーと値のペアのマップを作る関数です。<code>(dict "section" .Site.Home "current" .)</code> とした場合、以下のマップが作られています。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;section&quot;</span><span class="p">:</span> <span class="err">サイト全体の情報</span><span class="p">,</span>
+  <span class="nt">&quot;current&quot;</span><span class="p">:</span> <span class="err">表示されているページの情報</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p><code>{{ $section := .section }}</code> で、<code>$section</code> <code>section</code> キーで渡された情報がはいります。</p>
+</li>
+<li><code>{{ range $section.Sections }}</code> で処理対象のセクション配下のセクションを取り出します。最初はサイト全体の情報が渡されているので、<code>content</code> 直下にあるセクションページが取り出されます。</li>
+<li><code>{{ if .RegularPages }}</code> で、取り出したセクションの中に記事ページがあれば、ループで取り出して表示します。</li>
+<li><code>{{ template "navtree" (dict "section" . "current" $current) }}</code> で、取り出しているセクションの中にさらにセクションが含まれていれば、テンプレートを再帰呼び出ししてその中の記事を表示します。</li>
+</ul>
+</div>
+<p><code>themes/mytheme/static/css/default.css</code> に以下を追記します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">nav</span> <span class="p">{</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="hll"><span class="p">.</span><span class="nc">nav</span> <span class="nt">ul</span> <span class="p">{</span>
+</span><span class="hll">  <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+</span><span class="hll"><span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll"><span class="p">.</span><span class="nc">nav</span> <span class="nt">a</span> <span class="p">{</span>
+</span><span class="hll">  <span class="k">color</span><span class="p">:</span> <span class="mh">#000</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">line-height</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span><span class="hll"><span class="p">}</span>
+</span></pre></div>
+</td></tr></table>
+
+<h3 id="_4">現在表示しているページをハイライトする<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>今開いているページをハイライトします。</p>
+<p><code>themes/mytheme/layouts/partials/nav.html</code> を開いて、黄色の部分を書き換えます。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;nav&quot;</span><span class="nt">&gt;</span>
+  <span class="cp">{{</span> <span class="nv">template</span> <span class="s2">&quot;navtree&quot;</span> <span class="o">(</span><span class="nv">dict</span> <span class="s2">&quot;section&quot;</span> <span class="nv">.Site.Home</span> <span class="s2">&quot;current&quot;</span> <span class="err">.</span><span class="o">)</span> <span class="cp">}}</span>
+  <span class="cp">{{</span> <span class="nv">define</span> <span class="s2">&quot;navtree&quot;</span> <span class="cp">}}</span>
+    <span class="cp">{{</span> <span class="err">$</span><span class="nv">section</span> <span class="o">:=</span> <span class="nv">.section</span> <span class="cp">}}</span> <span class="cp">{{</span><span class="o">/*</span> <span class="err">処理するセクション</span> <span class="o">*/</span><span class="cp">}}</span>
+    <span class="cp">{{</span> <span class="err">$</span><span class="nv">current</span> <span class="o">:=</span> <span class="nv">.current</span> <span class="cp">}}</span> <span class="cp">{{</span><span class="o">/*</span> <span class="err">現在表示中のページ</span> <span class="o">*/</span><span class="cp">}}</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="cp">{{</span> <span class="nv">range</span> <span class="err">$</span><span class="nv">section.Sections</span> <span class="cp">}}</span>
+<span class="hll">        <span class="nt">&lt;li&gt;&lt;a</span> <span class="cp">{{</span> <span class="k">if</span> <span class="o">(</span><span class="nv">eq</span> <span class="err">.</span> <span class="err">$</span><span class="nv">current</span><span class="o">)</span> <span class="cp">}}</span><span class="na">class=</span><span class="s">&quot;current&quot;</span><span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
+</span>          <span class="cp">{{</span> <span class="k">if</span> <span class="nv">.RegularPages</span> <span class="cp">}}</span>
+          <span class="nt">&lt;ul&gt;</span>
+            <span class="cp">{{</span> <span class="nv">range</span> <span class="nv">.RegularPages</span><span class="cp">}}</span>
+<span class="hll">            <span class="nt">&lt;li&gt;&lt;a</span> <span class="cp">{{</span> <span class="k">if</span> <span class="o">(</span><span class="nv">eq</span> <span class="err">.</span> <span class="err">$</span><span class="nv">current</span><span class="o">)</span> <span class="cp">}}</span><span class="na">class=</span><span class="s">&quot;current&quot;</span><span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+</span>            <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+          <span class="nt">&lt;/ul&gt;</span>
+          <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+          <span class="cp">{{</span> <span class="nv">template</span> <span class="s2">&quot;navtree&quot;</span> <span class="o">(</span><span class="nv">dict</span> <span class="s2">&quot;section&quot;</span> <span class="err">.</span> <span class="s2">&quot;current&quot;</span> <span class="err">$</span><span class="nv">current</span><span class="o">)</span> <span class="cp">}}</span>
+      <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+<span class="nt">&lt;/nav&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>8行目は、表示されているページが、セクションページを想定した場合です。処理するセクション配下にあるセクションページと一致しているなら、背景色を付けます。</li>
+<li>12行目は、表示されているページが、シングルページを想定した場合です。処理するセクション配下にあるセクションページなら、背景色を付けます。</li>
+</ul>
+</div>
+<p><code>themes/mytheme/static/css/default.css</code> に以下を追記します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">nav</span> <span class="nt">a</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#000</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">;</span>
+  <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="hll"><span class="p">.</span><span class="nc">nav</span> <span class="nt">a</span><span class="p">.</span><span class="nc">current</span> <span class="p">{</span>
+</span><span class="hll">  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#ddd</span><span class="p">;</span>
+</span><span class="hll"><span class="p">}</span>
+</span></pre></div>
+</td></tr></table>
+
+<h3 id="_5">今開いているページのカテゴリだけを表示する<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><code>themes/mytheme/layouts/partials/nav.html</code> を開いて、黄色の部分を書き換えます。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;nav&quot;</span><span class="nt">&gt;</span>
+  <span class="cp">{{</span> <span class="nv">template</span> <span class="s2">&quot;navtree&quot;</span> <span class="o">(</span><span class="nv">dict</span> <span class="s2">&quot;section&quot;</span> <span class="nv">.Site.Home</span> <span class="s2">&quot;current&quot;</span> <span class="err">.</span><span class="o">)</span> <span class="cp">}}</span>
+  <span class="cp">{{</span> <span class="nv">define</span> <span class="s2">&quot;navtree&quot;</span> <span class="cp">}}</span>
+    <span class="cp">{{</span> <span class="err">$</span><span class="nv">section</span> <span class="o">:=</span> <span class="nv">.section</span> <span class="cp">}}</span> <span class="cp">{{</span><span class="o">/*</span> <span class="err">処理するセクション</span> <span class="o">*/</span><span class="cp">}}</span>
+    <span class="cp">{{</span> <span class="err">$</span><span class="nv">current</span> <span class="o">:=</span> <span class="nv">.current</span> <span class="cp">}}</span> <span class="cp">{{</span><span class="o">/*</span> <span class="err">現在表示中のページ</span> <span class="o">*/</span><span class="cp">}}</span>
+<span class="hll">    <span class="nt">&lt;ul</span> <span class="cp">{{</span><span class="k">if</span> <span class="k">not</span> <span class="o">(</span><span class="k">or</span> <span class="o">(</span><span class="err">$</span><span class="nv">section.IsAncestor</span> <span class="err">$</span><span class="nv">current</span><span class="o">)</span> <span class="o">(</span><span class="err">$</span><span class="nv">section.IsHome</span><span class="o">))</span> <span class="cp">}}</span><span class="na">class=</span><span class="s">&quot;close&quot;</span><span class="cp">{{</span><span class="nv">end</span><span class="cp">}}</span><span class="nt">&gt;</span>
+</span>      <span class="cp">{{</span> <span class="nv">range</span> <span class="err">$</span><span class="nv">section.Sections</span> <span class="cp">}}</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="cp">{{</span> <span class="k">if</span> <span class="o">(</span><span class="nv">eq</span> <span class="err">.</span> <span class="err">$</span><span class="nv">current</span><span class="o">)</span> <span class="cp">}}</span><span class="na">class=</span><span class="s">&quot;current&quot;</span><span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
+          <span class="cp">{{</span> <span class="k">if</span> <span class="nv">.RegularPages</span> <span class="cp">}}</span>
+<span class="hll">          <span class="nt">&lt;ul</span> <span class="cp">{{</span><span class="k">if</span> <span class="k">not</span> <span class="o">(</span><span class="nv">.IsAncestor</span> <span class="err">$</span><span class="nv">current</span><span class="o">)</span> <span class="cp">}}</span><span class="na">class=</span><span class="s">&quot;close&quot;</span><span class="cp">{{</span><span class="nv">end</span><span class="cp">}}</span><span class="nt">&gt;</span>
+</span>            <span class="cp">{{</span> <span class="nv">range</span> <span class="nv">.RegularPages</span><span class="cp">}}</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="cp">{{</span> <span class="k">if</span> <span class="o">(</span><span class="nv">eq</span> <span class="err">.</span> <span class="err">$</span><span class="nv">current</span><span class="o">)</span> <span class="cp">}}</span><span class="na">class=</span><span class="s">&quot;current&quot;</span><span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">.RelPermalink</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">.Title</span> <span class="cp">}}</span><span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+          <span class="nt">&lt;/ul&gt;</span>
+          <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+          <span class="cp">{{</span> <span class="nv">template</span> <span class="s2">&quot;navtree&quot;</span> <span class="o">(</span><span class="nv">dict</span> <span class="s2">&quot;section&quot;</span> <span class="err">.</span> <span class="s2">&quot;current&quot;</span> <span class="err">$</span><span class="nv">current</span><span class="o">)</span> <span class="cp">}}</span>
+      <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+<span class="nt">&lt;/nav&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><code>.IsAncestor 比較対象</code> は、「比較対象が自分（<code>.</code>）の祖先だったら」という意味です。</li>
+<li>6行目の場合、「"処理しているセクション"が"表示されたページの祖先"」または「処理しているセクションが第一階層」ではない場合、配下の一覧（<code>&lt;ul&gt;</code>）を非表示にします。</li>
+<li>10行目の場合、「"処理しているセクション以下にあるセクション"が"表示されたページの祖先"」ではない場合、処理しているセクション以下の記事一覧（<code>&lt;ul&gt;</code>）を非表示にします。</li>
+</ul>
+</div>
+<p><code>themes/mytheme/static/css/default.css</code> に以下を追記します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">nav</span> <span class="nt">a</span><span class="p">.</span><span class="nc">current</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#ddd</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="hll"><span class="p">.</span><span class="nc">nav</span> <span class="p">.</span><span class="nc">close</span> <span class="p">{</span>
+</span><span class="hll">  <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span><span class="hll"><span class="p">}</span>
+</span></pre></div>
+</td></tr></table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../05_mult-language/" class="btn btn-neutral" title="サイトを多言語化する"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../05_mult-language/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
