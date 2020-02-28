@@ -33,6 +33,7 @@ nav:
     - 04_create-theme/03_css.md
     - 04_create-theme/04_header.md
     - 04_create-theme/05_mult-language.md
+    - 04_create-theme/06_categorytree.md
 markdown_extensions:
   - toc:
       permalink: True
