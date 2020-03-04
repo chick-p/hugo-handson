@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>ショートコードの実装 - HUGO</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u30b7\u30e7\u30fc\u30c8\u30b3\u30fc\u30c9\u306e\u5b9f\u88c5";
+    var mkdocs_page_input_path = "04_create-theme/07_shortcode.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/toml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HUGO</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">事前準備</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/00_hugo/">HUGO の開発環境の構築</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/01_vscode/">VSCode のインストールと設定</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../00_prepare/02_git/">Gitのインストールと設定</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">サイトと記事作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/00_add-site/">HUGO でサイトを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../01_quickstart/01_add-article/">コンテンツ（記事）を作成する</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">テーマの作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../02_theme/01_create-site/">サンプルサイトとその構成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/02_create-quick-theme/">テーマテンプレートを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/04_kind-template/">ページの種類を学ぶ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/05_theme-directory/">テーマテンプレートの構成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_theme/06_partial/">テンプレートを部品化する</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">HUGO テンプレートシンタックス</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../03_hugo-template-syntax/01_base/">シンタックスの基本</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../03_hugo-template-syntax/02_base2/">変数・カスタム変数・トリム・関数・部分テンプレート定義</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../03_hugo-template-syntax/03_base3/">条件分岐</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../03_hugo-template-syntax/04_playground/">HUGO の関数・変数を使って、サイトあるあるを作ってみる</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">ドキュメントサイトのテンプレート作成</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../01_abstract/">ドキュメントサイトのテンプレートを作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../02_template-base/">ベース部分を作る</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../03_css/">CSS を適用する</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../04_header/">ヘッダーを作成する</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../05_mult-language/">サイトを多言語化する</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../06_categorytree/">カテゴリツリーの作成</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">ショートコードの実装</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">ショートコードの実装</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">ショートコードとは</a></li>
+        
+            <li><a class="toctree-l4" href="#_3">「注意書き」の実装</a></li>
+        
+            <li><a class="toctree-l4" href="#_8">特定言語でのみ表示する説明ブロックの実装</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HUGO</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>ドキュメントサイトのテンプレート作成 &raquo;</li>
+        
+      
+    
+    <li>ショートコードの実装</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">ショートコードの実装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="_2">ショートコードとは<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><a href="https://gohugo.io/content-management/shortcodes/">ショートコード</a>は、記事ファイル（Markdown ファイル）から呼び出せるカスタムスニペットです。
+Markdown はシンプルな分、表現力が乏しいですが、ショートコードを使うと Markdown にはできないスタイルを追加できます。</p>
+<p>HUGO では<a href="https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes">標準のショートコード</a>が用意されていますが、自分で<a href="https://gohugo.io/templates/shortcode-templates/">カスタムショートコード</a>を実装できます。</p>
+<ul>
+<li>ショートコードの例<ul>
+<li>「注意書き」や「ヒント」などの説明ブロック</li>
+<li>言語ごとに、記事の内容を表示/非表示にする</li>
+</ul>
+</li>
+</ul>
+<h2 id="_3">「注意書き」の実装<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>注意書きができるショートコード「warning」を作ってみましょう。
+「注意」という文言は言語ごとに表示を切り替えられるようにします。</p>
+<ul>
+<li>完成イメージ<br>
+  <img alt="注意書き" src="../img/07_shortcode_warning.png" /></li>
+</ul>
+<h3 id="_4">ショートコードファイルの作成<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>themes/mythemes/layouts/</code> の下に「shortcodes」ディレクトリを作成します。</li>
+<li>「shortcodes」ディレクトリの下に、次の内容で「warning.html」を作成します。<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;aside</span> <span class="na">class=</span><span class="s">&quot;warning&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;warning-alt&quot;</span><span class="nt">&gt;</span>
+    <span class="cp">{{</span> <span class="k">with</span> <span class="nv">.Site.Params.caption_warning</span> <span class="cp">}}{{</span> <span class="err">.</span> <span class="cp">}}{{</span> <span class="nv">end</span> <span class="cp">}}</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;warning-content&quot;</span><span class="nt">&gt;</span>
+    <span class="cp">{{</span> <span class="nv">.Inner</span> <span class="o">|</span> <span class="nf">markdownify</span> <span class="cp">}}</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/aside&gt;</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>HTML のファイル名がショートコード名です。</li>
+</ul>
+</div>
+<h3 id="_5">スタイルシートの調整<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><code>themes/mytheme/static/css/default.css</code> を開き、次の内容を追記します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">warning</span> <span class="p">{</span>
+  <span class="k">background</span><span class="p">:</span> <span class="mh">#fff4ea</span><span class="p">;</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">warning-alt</span> <span class="p">{</span>
+  <span class="k">font-weight</span><span class="p">:</span> <span class="mi">600</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="_6">言語による表示の切り替え<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>表示する言語によって、「注意」となっているタイトルを切り替えできるようにします。</p>
+<p><code>config.toml</code> を開き、黄色の部分を追記します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">[languages]</span>
+<span class="k">[languages.en]</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Hugo tutorial&quot;</span>
+<span class="n">LanguageName</span> <span class="o">=</span> <span class="s">&quot;English&quot;</span>
+<span class="n">contentDir</span> <span class="o">=</span> <span class="s">&quot;content/en&quot;</span>
+<span class="n">languageCode</span> <span class="o">=</span> <span class="s">&quot;en-us&quot;</span>
+<span class="n">search_placeholder</span> <span class="o">=</span> <span class="s">&quot;Enter search keywords&quot;</span>
+<span class="hll"><span class="n">caption_warning</span> <span class="o">=</span> <span class="s">&quot;Caption&quot;</span>
+</span>
+<span class="k">[languages.ja]</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Hugoチュートリアル&quot;</span>
+<span class="n">LanguageName</span> <span class="o">=</span> <span class="s">&quot;日本語&quot;</span>
+<span class="n">contentDir</span> <span class="o">=</span> <span class="s">&quot;content/ja&quot;</span>
+<span class="n">languageCode</span> <span class="o">=</span> <span class="s">&quot;ja-jp&quot;</span>
+<span class="n">search_placeholder</span> <span class="o">=</span> <span class="s">&quot;検索キーワードを入力&quot;</span>
+<span class="hll"><span class="n">caption_warning</span> <span class="o">=</span> <span class="s">&quot;注意&quot;</span>
+</span>
+<span class="k">[languages.zh]</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Hugo教程&quot;</span>
+<span class="n">LanguageName</span> <span class="o">=</span> <span class="s">&quot;中文(简体)&quot;</span>
+<span class="n">contentDir</span> <span class="o">=</span> <span class="s">&quot;content/zh&quot;</span>
+<span class="n">languageCode</span> <span class="o">=</span> <span class="s">&quot;zh-cn&quot;</span>
+<span class="n">search_placeholder</span> <span class="o">=</span> <span class="s">&quot;输入搜索关键字&quot;</span>
+<span class="hll"><span class="n">caption_warning</span> <span class="o">=</span> <span class="s">&quot;注意&quot;</span>
+</span></pre></div>
+</td></tr></table>
+
+<h3 id="_7">ショートコードの呼び出し<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><code>content/ja/sample.md</code> に次を記述します。
+言語によってタイトル（「注意」の部分）が変わるかについても、<code>content/en/sample.md</code> や <code>content/zh/sample.md</code> にも同様に記述して確認してみましょう。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="nv">warning</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">これは注意です。**ShortCode 内の Markdown も有効にしています。**</span>
+<span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="nv">warning</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x"></span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>ショートコードは <code>{{&lt; ショートコード名 &gt;}}{{&lt; /ショートコード名 &gt;}}</code> と書くことで利用できます。</li>
+<li>タグで囲った部分は、ショートコードファイルの <code>.Inner</code> で取り出しています。</li>
+</ul>
+</div>
+<h2 id="_8">特定言語でのみ表示する説明ブロックの実装<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>「英語の記事では表示して、日本語や中国語の記事では表示しない」といった、特定言語でのみ内容を表示できるようにしてみましょう。</p>
+<h3 id="_9">ショートコードファイルの作成<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>themes/mythemes/layouts/</code> の下に「shortcodes」ディレクトリを作成します。</li>
+<li><code>themes/mythemes/layouts/shortcodes</code> の下に、次の内容で「description.html」を作成します。<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="k">if</span> <span class="k">in</span> <span class="nv">.Params</span> <span class="nv">.Site.Language.Lang</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{{</span> <span class="nv">.Inner</span> <span class="o">|</span> <span class="nf">markdownify</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{{</span> <span class="nv">end</span> <span class="cp">}}</span><span class="x"></span>
+</pre></div>
+</td></tr></table>
+
+</li>
+</ol>
+<h3 id="_10">ショートコードの呼び出し<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p><code>content/ja/sample.md</code> に次を記述します。
+言語によってタイトル（「注意」の部分）が変わるかについても、<code>content/en/sample.md</code> や <code>content/zh/sample.md</code> にも同様に記述して確認してみましょう。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="nv">description</span> <span class="nv">ja</span> <span class="nv">en</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">この記述は日本語版と英語版でのみ表示されます。</span>
+<span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="nv">description</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x"></span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>ショートコード名の後の値（<code>ja en</code>）は <code>.Params</code> で取り出せます。</li>
+<li>スペース区切りにしているので取り出した値は配列に格納されています。</li>
+<li><a href="https://gohugo.io/functions/in/"><code>in</code></a> で配列内に現在表示している言語が含まれるか？をチェックして、存在すれば表示します。</li>
+</ul>
+</div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../06_categorytree/" class="btn btn-neutral" title="カテゴリツリーの作成"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../06_categorytree/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
