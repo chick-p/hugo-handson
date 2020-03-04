@@ -71,7 +71,9 @@ HUGO には[Multilingual Mode](https://gohugo.io/content-management/multilingual
 [^1]: 言語によって表示を切り替えたい文言が多い場合、`config.toml` に記述すると `config.toml` の内容が膨大になります。その場合は、[i18n 機能](https://gohugo.io/functions/i18n/) を使って、言語ごとの文言だけを別ファイルに切り出すこともできます。
 
 ### コンテンツの追加
-以下のファイルを `content` と差し替えます。
+以下のファイルを解凍し、`content` と差し替えます。
+
+[content.zip](content.zip)
 
 ### 変更前
 
