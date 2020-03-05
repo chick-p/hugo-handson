@@ -75,39 +75,6 @@ HUGO には[Multilingual Mode](https://gohugo.io/content-management/multilingual
 
 [content.zip](content.zip)
 
-### 変更前
-
-    :::bash
-    content
-    ├── _index.md
-    ├── docs
-    │   ├── _index.md
-    │   └── sample.md
-    └── search_result.md
-
-### 変更後
-
-    :::bash
-    content/
-    ├── en
-    │   ├── _index.md
-    │   ├── docs
-    │   │   ├── _index.md
-    │   │   └── sample.md
-    │   └── search_result.md
-    ├── ja
-    │   ├── _index.md
-    │   ├── docs
-    │   │   ├── _index.md
-    │   │   └── sample.md
-    │   └── search_result.md
-    └── zh
-        ├── _index.md
-        ├── docs
-        │   ├── _index.md
-        │   └── sample.md
-        └── search_result.md
-
 ### 動作確認
 
 開発サーバを起動して確認してみましょう。
