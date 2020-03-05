@@ -174,7 +174,7 @@
         
             <li><a class="toctree-l4" href="#_2">コンテンツの多言語化</a></li>
         
-            <li><a class="toctree-l4" href="#_8">言語選択メニュー</a></li>
+            <li><a class="toctree-l4" href="#_6">言語選択メニュー</a></li>
         
         </ul>
     
@@ -341,63 +341,7 @@
 <h3 id="_4">コンテンツの追加<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>以下のファイルを解凍し、<code>content</code> と差し替えます。</p>
 <p><a href="../content.zip">content.zip</a></p>
-<h3 id="_5">変更前<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>content
-├── _index.md
-├── docs
-│   ├── _index.md
-│   └── sample.md
-└── search_result.md
-</pre></div>
-</td></tr></table>
-
-<h3 id="_6">変更後<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>content/
-├── en
-│   ├── _index.md
-│   ├── docs
-│   │   ├── _index.md
-│   │   └── sample.md
-│   └── search_result.md
-├── ja
-│   ├── _index.md
-│   ├── docs
-│   │   ├── _index.md
-│   │   └── sample.md
-│   └── search_result.md
-└── zh
-    ├── _index.md
-    ├── docs
-    │   ├── _index.md
-    │   └── sample.md
-    └── search_result.md
-</pre></div>
-</td></tr></table>
-
-<h3 id="_7">動作確認<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h3 id="_5">動作確認<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>開発サーバを起動して確認してみましょう。
 サブディレクトリの言語コードにおうじて、配信されるコンテンツの言語が切り替わります。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -410,9 +354,9 @@ $ hugo server
 </pre></div>
 </td></tr></table>
 
-<h2 id="_8">言語選択メニュー<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_6">言語選択メニュー<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>ヘッダーの言語選択メニューを作ります。</p>
-<h3 id="_9">テンプレートファイルの修正<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h3 id="_7">テンプレートファイルの修正<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p><code>themes/mytheme/layouts/partials/header.html</code> を開いて、黄色の部分を修正します。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -484,7 +428,7 @@ $ hugo server
 </pre></div>
 </td></tr></table>
 
-<h3 id="_10">動作確認<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h3 id="_8">動作確認<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>開発サーバを起動して確認してみましょう。
 ドロップダウンを変更すると、その言語のコンテンツが表示されます。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
