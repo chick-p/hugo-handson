@@ -25,7 +25,7 @@ HUGO には[Multilingual Mode](https://gohugo.io/content-management/multilingual
 
 `config.toml` を開いて、多言語設定を追記します。
 
-    :::toml hl_lines="2 3 10 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35"
+    :::toml hl_lines="2 3 5 6 10 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35"
     baseURL = "http://example.org/"
     # languageCode = "en-us"
     # title = "My New Hugo Site"
