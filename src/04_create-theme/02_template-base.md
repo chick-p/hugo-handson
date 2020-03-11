@@ -95,10 +95,13 @@
 
     :::hugo
     {{ define "main" }}
-    {{ partial "nav.html" . }}
-    <div class="list">
+    <div class="content">
       {{ partial "nav.html" . }}
-      list
+      <article>
+        <div class="list">
+          list
+        </div>
+      </article>
     </div>
     {{ end }}
 
